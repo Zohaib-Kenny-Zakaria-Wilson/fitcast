@@ -10,7 +10,7 @@ function App() {
         Hello world!
       </h1>
       <Homepage />
-      <Wardrobe />
+      {/* <Wardrobe /> */}
     </>
   );
 }
