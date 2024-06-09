@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <main className={`w-screen h-screen px-20 py-16 bg-background dark:bg-dark-background`}>
+    <main className={`w-screen h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
       <WeatherDisplay toggleDarkMode={toggleDarkMode} />
     </main>
   );
