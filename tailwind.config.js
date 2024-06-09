@@ -10,6 +10,11 @@ module.exports = {
       'background': '#f0f0f0',
       'foreground': '#ffffff',
       'primary': '#494747',
+      'component-border': '#DFDFDF',
+    },
+    fontFamily: {
+      'sans': ['Azo Sans', 'sans-serif'],
+      azo: ['Azo Sans', 'sans-serif'],
     },
   },
   plugins: [],
