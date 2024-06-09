@@ -11,7 +11,7 @@ function WeatherDisplay({ toggleDarkMode }) {
         <div className="flex flex-col w-full gap-9">
           {/* Realtime Wrapper */}
           <div className="w-full flex flex-col gap-6 items-center">
-            <p className="text-center font-medium text-3xl text-primary dark:text-dark-primary">
+            <p className="text-center font-medium text-4xl text-primary dark:text-dark-primary">
               Grand Island
             </p>
             <img
