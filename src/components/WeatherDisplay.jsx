@@ -8,9 +8,9 @@ function WeatherDisplay({ toggleDarkMode }) {
       {/* Main Wrapper */}
       <div className="w-full h-full py-16 px-6 2xl:px-12 flex flex-col items-center justify-between">
         {/* Weather Wrapper */}
-        <div className="flex flex-col w-full gap-3 2xl:gap-9">
+        <div className="flex flex-col w-full gap-3 xl:gap-6 2xl:gap-9">
           {/* Realtime Wrapper */}
-          <div className="w-full flex flex-col gap-3 2xl:gap-6 items-center">
+          <div className="w-full flex flex-col gap-3 xl:gap-4 2xl:gap-6 items-center">
             <p className="text-center font-medium text-xl xl:text-2xl 2xl:text-4xl text-primary dark:text-dark-primary">
               Grand Island
             </p>
@@ -19,7 +19,7 @@ function WeatherDisplay({ toggleDarkMode }) {
               src={`${process.env.PUBLIC_URL}/assets/clear-day.svg`}
               alt="Clear Day"
             />
-            <div className="flex flex-col 2xl:gap-2">
+            <div className="flex flex-col xl:gap-1 2xl:gap-2">
               <p className="text-center font-bold text-2xl xl:text-3xl 2xl:text-5xl text-primary dark:text-dark-primary">
                 23°F
               </p>
@@ -29,7 +29,7 @@ function WeatherDisplay({ toggleDarkMode }) {
             </div>
           </div>
           {/* Weather Details Wrapper */}
-          <div className="w-full grid grid-cols-2 gap-2 items-center">
+          <div className="w-full grid grid-cols-2 gap-2 xl:gap-3 2xl:gap-3 items-center">
             {/* Weather Key Pair */}
             <WeatherKeyInfo svg="sunrise" text="6:43am" />
             <WeatherKeyInfo svg="sunset" text="10:00pm" />
