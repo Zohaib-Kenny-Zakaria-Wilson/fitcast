@@ -1,23 +1,27 @@
-import React from 'react';
-import Homepage from './pages/Homepage';
-import WeatherComponent from './components/Sidebar';
-import Button from './components/Button';
-import './App.css';
+import React, { useState } from 'react';
+import WeatherDisplay from './components/WeatherDisplay';
 
 function App() {
-  return (
-    <>
-      <main className='w-screen h-screen px-20 py-16'>
-        <WeatherComponent />
-      </main>
+  // State to toggle dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-      <h1 className="text-teal-500">
-        Hello world!
-      </h1>
-      <Button>Button Test</Button>
-      <Homepage />
-      {/* <Wardrobe /> */}
-    </>
+  /**
+   * Toggles the dark mode on and off
+   * @returns {void}
+   */
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  return (
+    <main className={`w-screen h-screen px-20 py-16 bg-background dark:bg-dark-background`}>
+      <WeatherDisplay toggleDarkMode={toggleDarkMode} />
+    </main>
   );
 }
 
