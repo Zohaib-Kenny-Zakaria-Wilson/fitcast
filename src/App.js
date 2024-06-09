@@ -1,12 +1,16 @@
 import React from 'react';
 import Homepage from './pages/Homepage';
-import Wardrobe from './pages/Wardrobe';
+import WeatherComponent from './components/Sidebar';
 import Button from './components/Button';
 import './App.css';
 
 function App() {
   return (
     <>
+      <main className='w-screen h-screen px-20 py-16'>
+        <WeatherComponent />
+      </main>
+
       <h1 className="text-teal-500">
         Hello world!
       </h1>
