@@ -1,16 +1,17 @@
 import React from "react";
 import WeatherKeyInfo from "./WeatherKeyInfo";
+import { Logo } from "./Logo";
 
-function WeatherComponent() {
+function WeatherDisplay({ toggleDarkMode }) {
   return (
-    <div className="bg-foreground w-fit h-full rounded-xl border-b-4 border-component-border">
+    <div className="bg-foreground dark:bg-dark-foreground w-fit h-full rounded-xl border-b-4 border-component-border dark:border-dark-component-border">
       {/* Main Wrapper */}
       <div className="w-full h-full py-16 px-6 2xl:px-12 flex flex-col items-center justify-between">
         {/* Weather Wrapper */}
         <div className="flex flex-col w-full gap-9">
           {/* Realtime Wrapper */}
           <div className="w-full flex flex-col gap-6 items-center">
-            <p className="text-center font-medium text-3xl text-primary">
+            <p className="text-center font-medium text-3xl text-primary dark:text-dark-primary">
               Grand Island
             </p>
             <img
@@ -19,10 +20,12 @@ function WeatherComponent() {
               alt="Clear Day"
             />
             <div className="flex flex-col gap-2">
-              <p className="text-center font-bold text-5xl text-primary">
+              <p className="text-center font-bold text-5xl text-primary dark:text-dark-primary">
                 75°F
               </p>
-              <p className="text-center text-base text-primary">Sunny</p>
+              <p className="text-center text-base text-primary dark:text-dark-primary">
+                Sunny
+              </p>
             </div>
           </div>
           {/* Weather Details Wrapper */}
@@ -30,7 +33,7 @@ function WeatherComponent() {
             {/* Weather Key Pair */}
             <div className="w-full flex gap-4">
               <WeatherKeyInfo svg="sunrise" text="6:43am" />
-              <WeatherKeyInfo svg="suntset" text="10:00pm" />
+              <WeatherKeyInfo svg="sunset" text="10:00pm" />
             </div>
             {/* Weather Key Pair */}
             <div className="w-full flex gap-4">
@@ -45,14 +48,10 @@ function WeatherComponent() {
           </div>
         </div>
         {/* Logo */}
-        <img
-          className="w-36"
-          src={`${process.env.PUBLIC_URL}/assets/fitcast.svg`}
-          alt=""
-        />
+        <Logo onClick={toggleDarkMode} />
       </div>
     </div>
   );
 }
 
-export default WeatherComponent;
+export default WeatherDisplay;
