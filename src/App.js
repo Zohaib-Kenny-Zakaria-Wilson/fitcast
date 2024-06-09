@@ -24,7 +24,7 @@ function App() {
       <main className={`w-screen h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
         <WeatherDisplay toggleDarkMode={toggleDarkMode} />
       </main>
-      <ClothingDisplay link={"t-shirt.jpeg"} text={"White Shirt"} />
+      <ClothingDisplay link={"t-shirt.jpeg"} text={"White Shirt"} color={"#9E9E9E"} textColor={"#262626"} />
     </>
   );
 }
