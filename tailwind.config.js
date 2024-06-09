@@ -9,6 +9,7 @@ module.exports = {
       current: 'currentColor',
       'background': '#f0f0f0',
       'foreground': '#ffffff',
+      'primary': '#494747',
     },
   },
   plugins: [],
