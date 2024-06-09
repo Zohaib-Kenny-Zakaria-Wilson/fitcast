@@ -21,7 +21,7 @@ function WeatherDisplay({ toggleDarkMode }) {
             />
             <div className="flex flex-col gap-2">
               <p className="text-center font-bold text-5xl text-primary dark:text-dark-primary">
-                75°F
+                23°F
               </p>
               <p className="text-center text-base text-primary dark:text-dark-primary">
                 Sunny

@@ -18,8 +18,7 @@ module.exports = {
       'dark-component-border': '#1A1A1A', // Dark mode border
     },
     fontFamily: {
-      'sans': ['Azo Sans', 'sans-serif'],
-      azo: ['Azo Sans', 'sans-serif'],
+      'sans': ['azo-sans-web', 'sans-serif'],
     },
   },
   plugins: [],
