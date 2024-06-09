@@ -2,9 +2,9 @@ import React from "react";
 
 function WeatherKeyInfo({ svg, text }) {
   return (
-    <div className="w-full px-2 pr-4 py-1 flex justify-center items-center gap-1 rounded-lg bg-background text-primary">
+    <div className="w-full px-3 py-4 flex justify-center gap-2 rounded-lg bg-background text-primary">
       <img
-        className="size-12"
+        className="h-6"
         src={`${process.env.PUBLIC_URL}/assets/${svg}.svg`}
         alt={svg}
       />
