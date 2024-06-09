@@ -22,7 +22,7 @@ To get started with FitCast, you'll need:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/fitcast.git
+    git clone https://github.com/zohaib-kenny-zakaria-wilson/fitcast.git
     ```
 
 2. **Set up the React frontend:**
@@ -79,7 +79,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Questions or comments? Contact us at [your-email@example.com](mailto:your-email@example.com).
+Questions or comments? Hit one of us up on the repo!
 
 ---
 
