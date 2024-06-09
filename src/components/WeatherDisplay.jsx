@@ -11,7 +11,7 @@ function WeatherDisplay({ toggleDarkMode }) {
         <div className="flex flex-col w-full gap-3 xl:gap-6 2xl:gap-9">
           {/* Realtime Wrapper */}
           <div className="w-full flex flex-col gap-3 xl:gap-4 2xl:gap-6 items-center">
-            <p className="text-center font-medium text-xl xl:text-2xl 2xl:text-4xl text-primary dark:text-dark-primary">
+            <p className="text-center font-medium text-xl xl:text-2xl 2xl:text-4xl text-primary-tw dark:text-dark-primary-tw">
               Grand Island
             </p>
             <img
@@ -20,10 +20,10 @@ function WeatherDisplay({ toggleDarkMode }) {
               alt="Clear Day"
             />
             <div className="flex flex-col xl:gap-1 2xl:gap-2">
-              <p className="text-center font-bold text-2xl xl:text-3xl 2xl:text-5xl text-primary dark:text-dark-primary">
+              <p className="text-center font-bold text-2xl xl:text-3xl 2xl:text-5xl text-primary-tw dark:text-dark-primary-tw">
                 23°F
               </p>
-              <p className="text-center text-xs xl:text-sm text-primary dark:text-dark-primary">
+              <p className="text-center text-xs xl:text-sm text-primary-tw dark:text-dark-primary-tw">
                 Sunny
               </p>
             </div>
