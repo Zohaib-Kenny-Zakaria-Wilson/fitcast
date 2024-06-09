@@ -2,7 +2,7 @@ import React from "react";
 
 export function Logo({ onClick }) {
   return (
-    <button className="w-36" onClick={onClick}>
+    <button className="w-28 2xl:w-36" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
