@@ -26,7 +26,7 @@ function App() {
         <Wthr toggleDarkMode={toggleDarkMode} />
         <TodayOutfitContainer />
       </main>
-      <AddItem />
+      <AddItem/>
     </>
   );
 }

@@ -1,28 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemExpanded from "./ItemExpanded";
 import Button from "../misc/Button";
 
-export default function ClothingItem({ link, text, color, textColor }) {
-  //TODO: Set up state for clothing item
+export default function AddItem() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const link = "tshirt.png";
+  const text = "";
+  const color = "";
+  const textColor = "";
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleFormSubmit = (formData) => {
+    console.log("Form submitted with:", formData);
+    closeModal();
+  };
 
   return (
     <>
-      <button onClick={() => document.getElementById("my_modal_2").showModal()}>
-        <Button text="Add Item" />
+      <button onClick={openModal}>
+        <Button children={"Add Item"} />
       </button>
-      <dialog id="my_modal_2" className="modal">
-        <ItemExpanded
-          link={link}
-          text={text}
-          color={color}
-          textColor={textColor}
-          onClick={() => {console.log("Add Item")}}
-        />
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
+      {isModalOpen && (
+        <dialog open className="modal">
+          <ItemExpanded
+            link={link}
+            parentText={text}
+            color={color}
+            textColor={textColor}
+            onSubmit={handleFormSubmit}
+          />
+          <button onClick={closeModal} className="modal-backdrop">
+          </button>
+        </dialog>
+      )}
     </>
   );
 }
-
