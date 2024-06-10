@@ -1,8 +1,8 @@
 import React from "react";
-import WeatherKeyInfo from "./WeatherKeyInfo";
-import { Logo } from "./Logo";
+import WeatherKeyInfo from "./WthrComponents/WthrStats";
+import { Logo } from "./misc/Logo";
 
-function WeatherDisplay({ toggleDarkMode }) {
+function Wthr({ toggleDarkMode }) {
   return (
     <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
       {/* Main Wrapper */}
@@ -48,4 +48,4 @@ function WeatherDisplay({ toggleDarkMode }) {
   );
 }
 
-export default WeatherDisplay;
+export default Wthr;

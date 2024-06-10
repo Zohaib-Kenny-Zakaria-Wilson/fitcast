@@ -1,13 +1,13 @@
 import React from "react";
-import ClothingTag from "./ClothingTag";
+import ItemTag from "./ItemTag";
 
-export function ClothingTagContainer() {
+export function ItemTagContainer() {
   return (
     <>
       <p>Great For</p>
     <div className="flex flex-col col-span-1 col-span-2 gap-4">
       <div className="flex gap-4 w-fit h-fit">
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -15,7 +15,7 @@ export function ClothingTagContainer() {
           color={"#A4DEFF"}
           textColor={"#2477B2"}
         />
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -24,7 +24,7 @@ export function ClothingTagContainer() {
           textColor={"#690A0A"}
         />
       </div><div className="flex gap-4 w-fit h-fit">
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -32,7 +32,7 @@ export function ClothingTagContainer() {
           color={"#FFD59D"}
           textColor={"#4D3206"}
         />
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -42,7 +42,7 @@ export function ClothingTagContainer() {
         />
       </div>
       <div className="flex gap-4 w-fit h-fit">
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -50,7 +50,7 @@ export function ClothingTagContainer() {
           color={"#B6EEBC"}
           textColor={"#374151"}
         />
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -60,7 +60,7 @@ export function ClothingTagContainer() {
         />
       </div>
       <div className="flex gap-4 w-fit h-fit">
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
@@ -68,7 +68,7 @@ export function ClothingTagContainer() {
           color={"#EAB6EE"}
           textColor={"#6314C9"}
         />
-        <ClothingTag
+        <ItemTag
           onClick={() => {
             console.log("tag switch");
           }}
