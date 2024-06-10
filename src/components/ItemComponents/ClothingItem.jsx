@@ -3,6 +3,8 @@ import ItemMini from "./ItemMini";
 import ItemExpanded from "./ItemExpanded";
 
 export default function ClothingItem({ link, text, color, textColor }) {
+  //TODO: Set up state for clothing item
+
   return (
     <>
       <button onClick={() => document.getElementById("my_modal_2").showModal()}>
