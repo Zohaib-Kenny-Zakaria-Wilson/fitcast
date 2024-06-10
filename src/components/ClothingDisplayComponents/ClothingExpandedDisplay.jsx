@@ -9,7 +9,7 @@ export default function ClothingExpandedDisplay({
 }) {
   return (
     <div
-      className={`modal-box min-w-[75vw] min-h-[50vw] xl:min-w-[60vw] xl:min-h-[30vw] p-12 flex gap-12 text-primary-tw`}
+      className={`modal-box min-w-[75vw] min-h-[50vw] xl:min-w-[60vw] xl:min-h-[35vw] p-12 flex gap-12 text-primary-tw`}
       style={{ backgroundColor: color }}
     >
       <div className="flex w-full min-h-full">
@@ -25,11 +25,15 @@ export default function ClothingExpandedDisplay({
             {text}
           </p>
           <p className=" text-2xl text-[#7A7A7A] dark:text-dark-primary-tw">
+            {/* NOTE: This will have to be changed later as it will pass in the clothing category */}
             Shirt
           </p>
         </div>
         {/* Weather Conditions */}
         <ClothingTagContainer />
+        <button className="full bg-primary-tw text-background py-3 rounded-md">
+          <p>Add Item</p>
+        </button>
       </div>
     </div>
   );
