@@ -4,7 +4,7 @@ import { Logo } from "./misc/Logo";
 
 function Wthr({ toggleDarkMode }) {
   return (
-    <div className="h-full border-b-4 bg-foreground dark:bg-dark-foreground w-fit rounded-xl border-component-border dark:border-dark-component-border">
+    <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
       {/* Main Wrapper */}
       <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
         {/* Weather Wrapper */}
@@ -29,7 +29,7 @@ function Wthr({ toggleDarkMode }) {
             </div>
           </div>
           {/* Weather Details Wrapper */}
-          <div className="grid items-center w-full grid-cols-2 gap-2 xl:gap-3 2xl:gap-3">
+          <div className="grid items-center grid-cols-2 gap-2 w-fit xl:gap-3 2xl:gap-3">
             {/* Weather Key Pair */}
             <WeatherKeyInfo svg="sunrise" text="6:43am" />
             <WeatherKeyInfo svg="sunset" text="10:00pm" />

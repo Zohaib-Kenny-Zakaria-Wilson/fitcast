@@ -9,7 +9,7 @@ export default function WthrStats({ svg, text }) {
         src={`${process.env.PUBLIC_URL}/assets/${svg}.svg`}
         alt={svg}
       />
-      <p className="text-xs xl:text-sm 2xl:text-base">{text}</p>
+      <p className="text-xs w-fit xl:text-sm 2xl:text-base">{text}</p>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export function ItemTagContainer() {
   return (
     <>
       <p>Great For</p>
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col col-span-1 col-span-2 gap-4">
       <div className="flex gap-4 w-fit h-fit">
         <ItemTag
           onClick={() => {
