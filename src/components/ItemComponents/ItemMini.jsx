@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ClothingMiniDisplay({ link, text, color, textColor }) {
+export default function ItemMini({ link, text, color, textColor }) {
   return (
     <main
       className={`flex flex-col w-48 h-48 rounded-md`}

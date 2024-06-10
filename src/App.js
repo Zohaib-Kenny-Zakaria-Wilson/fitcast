@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import WeatherDisplay from './components/WeatherDisplay';
-import ClothingDisplay from './components/ClothingDisplay';
+import Wthr from './components/Wthr';
+import ClothingItem from './components/ClothingItem';
 
 function App() {
   // State to toggle dark mode
@@ -22,9 +22,9 @@ function App() {
   return (
     <>
       <main className={`w-screen h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
-        <WeatherDisplay toggleDarkMode={toggleDarkMode} />
+        <Wthr toggleDarkMode={toggleDarkMode} />
       </main>
-      <ClothingDisplay link={"t-shirt.jpeg"} text={"White Shirt"} color={"#9E9E9E"} textColor={"#262626"} />
+      <ClothingItem link={"t-shirt.jpeg"} text={"White Shirt"} color={"#9E9E9E"} textColor={"#262626"} />
     </>
   );
 }

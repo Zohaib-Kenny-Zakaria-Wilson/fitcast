@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ClothingTag({ onClick, text, color, textColor }) {
+export default function ItemTag({ onClick, text, color, textColor }) {
   return (
     <div
       onClick={onClick}

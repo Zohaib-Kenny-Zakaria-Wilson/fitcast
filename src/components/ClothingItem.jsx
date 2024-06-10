@@ -1,12 +1,12 @@
 import React from "react";
-import ClothingMiniDisplay from "./ClothingDisplayComponents/ClothingMiniDisplay";
-import ClothingExpandedDisplay from "./ClothingDisplayComponents/ClothingExpandedDisplay";
+import ItemMini from "./ItemComponents/ItemMini";
+import ItemExpanded from "./ItemComponents/ItemExpanded";
 
-function ClothingDisplay({ link, text, color, textColor }) {
+export default function ClothingItem({ link, text, color, textColor }) {
   return (
     <>
       <button onClick={() => document.getElementById("my_modal_2").showModal()}>
-        <ClothingMiniDisplay
+        <ItemMini
           link={link}
           text={text}
           color={color}
@@ -14,7 +14,7 @@ function ClothingDisplay({ link, text, color, textColor }) {
         />
       </button>
       <dialog id="my_modal_2" className="modal">
-        <ClothingExpandedDisplay
+        <ItemExpanded
           link={link}
           text={text}
           color={color}
@@ -28,4 +28,3 @@ function ClothingDisplay({ link, text, color, textColor }) {
   );
 }
 
-export default ClothingDisplay;

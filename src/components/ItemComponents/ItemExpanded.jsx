@@ -1,7 +1,7 @@
 import React from "react";
-import { ClothingTagContainer } from "./ClothingTagContainer";
+import { ItemTagContainer } from "./ItemTagContainer";
 
-export default function ClothingExpandedDisplay({
+export default function ItemExpanded({
   link,
   text,
   color,
@@ -30,7 +30,7 @@ export default function ClothingExpandedDisplay({
           </p>
         </div>
         {/* Weather Conditions */}
-        <ClothingTagContainer />
+        <ItemTagContainer />
         <button className="py-3 rounded-md full bg-primary-tw text-background">
           <p>Add Item</p>
         </button>
