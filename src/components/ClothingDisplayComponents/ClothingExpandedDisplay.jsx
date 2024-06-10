@@ -25,7 +25,7 @@ export default function ClothingExpandedDisplay({
             {text}
           </p>
           <p className=" text-2xl text-[#7A7A7A] dark:text-dark-primary-tw">
-            {/* NOTE: This will have to be changed later as it will pass in the clothing category */}
+            {/* NOTICE: This will have to be changed later as it will pass in the clothing category */}
             Shirt
           </p>
         </div>
