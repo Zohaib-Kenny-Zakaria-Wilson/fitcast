@@ -1,6 +1,6 @@
 import React from "react";
-import ItemMini from "./ItemComponents/ItemMini";
-import ItemExpanded from "./ItemComponents/ItemExpanded";
+import ItemMini from "./ItemMini";
+import ItemExpanded from "./ItemExpanded";
 
 export default function ClothingItem({ link, text, color, textColor }) {
   return (

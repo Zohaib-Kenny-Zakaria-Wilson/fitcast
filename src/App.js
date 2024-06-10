@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Wthr from './components/Wthr';
-import ClothingItem from './components/ClothingItem';
+import TodayOutfitContainer from './components/TodayOutfitContainer';
 
 function App() {
   // State to toggle dark mode
@@ -21,10 +21,10 @@ function App() {
 
   return (
     <>
-      <main className={`w-screen h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
+      <main className={`w-screen flex gap-14 h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
         <Wthr toggleDarkMode={toggleDarkMode} />
+        <TodayOutfitContainer />
       </main>
-      <ClothingItem link={"t-shirt.jpeg"} text={"White Shirt"} color={"#9E9E9E"} textColor={"#262626"} />
     </>
   );
 }

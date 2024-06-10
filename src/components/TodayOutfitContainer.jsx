@@ -1,5 +1,5 @@
 import React from "react";
-import Outfit from "./Outfit";
+import Outfit from "./OutfitComponents/Outfit";
 
 export default function TodayOutfitContainer() {
   return (
