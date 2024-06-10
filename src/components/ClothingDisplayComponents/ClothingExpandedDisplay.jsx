@@ -31,7 +31,7 @@ export default function ClothingExpandedDisplay({
         </div>
         {/* Weather Conditions */}
         <ClothingTagContainer />
-        <button className="full bg-primary-tw text-background py-3 rounded-md">
+        <button className="py-3 rounded-md full bg-primary-tw text-background">
           <p>Add Item</p>
         </button>
       </div>
