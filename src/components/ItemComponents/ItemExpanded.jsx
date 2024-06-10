@@ -6,6 +6,7 @@ export default function ItemExpanded({
   text,
   color,
   textColor,
+  onClick,
 }) {
   //TODO: Set up state for clothing item to change when the user clicks edit or something as well as passing all the old states to the new state
 
@@ -33,7 +34,7 @@ export default function ItemExpanded({
         </div>
         {/* Weather Conditions */}
         <ItemTagContainer />
-        <button className="py-3 rounded-md full bg-primary-tw text-background">
+        <button className="py-3 rounded-md full bg-primary-tw text-background" onClick={onClick}>
           <p>Add Item</p>
         </button>
       </div>
