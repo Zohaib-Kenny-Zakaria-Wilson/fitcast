@@ -7,7 +7,7 @@ import useAstro from "../hooks/useAstro";
 function Wthr({ toggleDarkMode }) {
   const { data, error } = useWeather();
   const { astroData, astroError } = useAstro();
-  console.log(astroData);
+
   return (
     <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
       <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
