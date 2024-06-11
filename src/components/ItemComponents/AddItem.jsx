@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import ItemMini from "./ItemMini";
 import ItemExpanded from "./ItemExpanded";
+import Button from "../misc/Button";
 
-export default function ClothingItem({ link, text, color, textColor }) {
+export default function AddItem() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const link = "tshirt.png";
+  const text = "";
+  const color = "";
+  const textColor = "";
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,8 +25,8 @@ export default function ClothingItem({ link, text, color, textColor }) {
 
   return (
     <>
-      <button type="button" onClick={openModal}>
-        <ItemMini link={link} text={text} color={color} textColor={textColor} />
+      <button onClick={openModal}>
+        <Button children={"Add Item"} />
       </button>
       {isModalOpen && (
         <dialog open className="modal">
@@ -32,8 +37,7 @@ export default function ClothingItem({ link, text, color, textColor }) {
             textColor={textColor}
             onSubmit={handleFormSubmit}
           />
-          <button type="button" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
-            Close
+          <button formMethod="dialog" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
           </button>
         </dialog>
       )}
