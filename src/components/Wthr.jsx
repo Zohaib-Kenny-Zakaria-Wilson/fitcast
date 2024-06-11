@@ -5,8 +5,8 @@ import useWeather from "../hooks/useWeather";
 import useAstro from "../hooks/useAstro";
 
 function Wthr({ toggleDarkMode }) {
-  const { data, error } = useWeather();
-  const { astroData, astroError } = useAstro();
+  const { data } = useWeather();
+  const { astroData } = useAstro();
 
   return (
     <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
