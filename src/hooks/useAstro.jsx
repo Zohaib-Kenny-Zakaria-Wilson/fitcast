@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-export default function useWeather() {
-  const [data, setData] = useState(null);
+export default function useAstro() {
+  const [astroData, setAstroData] = useState(null);
   const [error, setError] = useState(null);
   useEffect(() => {
     async function init() {
       const baseUrl =
-        "http://api.weatherapi.com/v1/current.json?key=" +
+        "http://api.weatherapi.com/v1/astronomy.json?key=" +
         process.env.REACT_APP_API_KEY +
         "&q=Lincoln";
-      setData(null);
+      setAstroData(null);
       setError(null);
       try {
         await fetch(baseUrl, {
@@ -19,7 +19,7 @@ export default function useWeather() {
           },
         })
           .then((response) => response.json())
-          .then((data) => setData(data))
+          .then((data) => setAstroData(data))
           .catch((err) => console.error(err));
       } catch (e) {
         setError(e);
@@ -27,6 +27,5 @@ export default function useWeather() {
     }
     init();
   }, []);
-
-  return { data, error };
+  return { astroData, error };
 }
