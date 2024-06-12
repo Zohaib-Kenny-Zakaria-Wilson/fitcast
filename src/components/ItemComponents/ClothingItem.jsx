@@ -49,7 +49,7 @@ export default function ClothingItem({ clothingItem }) {
   return (
     <>
       <button type="button" onClick={openModal}>
-        <ItemMini link={clothingItem.image} text={clothingItem.name} color={clothingItem.dominantColor} textColor={clothingItem.contrastColor} />
+        <ItemMini clothingItem={clothingItem} />
       </button>
       {isModalOpen && (
         <dialog open className="modal">
