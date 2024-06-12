@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Wthr from './components/Wthr';
 import TodayOutfitContainer from './components/TodayOutfitContainer';
 import AddItem from './components/ItemComponents/AddItem';
+import Wardrobe from './components/Wardrobe';
 
 function App() {
   // State to toggle dark mode
@@ -27,6 +28,7 @@ function App() {
         <TodayOutfitContainer />
       </main>
       <AddItem/>
+      <Wardrobe/>
     </>
   );
 }
