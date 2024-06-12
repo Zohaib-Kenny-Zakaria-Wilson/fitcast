@@ -7,7 +7,7 @@ export default function useAppContext() {
 }
 export function AppProvider(props) {
   const [clothingItems, setClothingItems] = useState([
-    new clothingItem("1", "1", "White T-Shirt", "#9E9E9E", "#262626", "Shirt", "t-shirt.jpeg", true, false, true, false, true, false, true, false)
+    new clothingItem("1", "1", "White T-Shirt", "#9E9E9E", "#262626", "Shirt", "t-shirt.jpeg", false, false, false, false, false, false, false, false)
   ]);
 
   return (
