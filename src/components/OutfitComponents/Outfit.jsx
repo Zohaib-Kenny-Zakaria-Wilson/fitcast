@@ -12,7 +12,7 @@ export default function Outfit() {
             return (
               <ClothingItem
                 link={"t-shirt.jpeg"}
-                text={clothingItem.text}
+                text={clothingItem.name}
                 color={"#9E9E9E"}
                 textColor={"#262626"}
               />
