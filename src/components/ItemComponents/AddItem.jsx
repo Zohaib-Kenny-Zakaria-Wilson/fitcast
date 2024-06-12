@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ItemExpanded from "./ItemExpanded";
 import Button from "../misc/Button";
 import useAppContext from "../../context/useAppContext";
+import { clothingItem } from "../models/clothingItem";
+
 
 export default function AddItem() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,8 +22,11 @@ export default function AddItem() {
   };
 
   const handleFormSubmit = (formData) => {
-    console.log("Form submitted with:", formData);
-    setClothingItems((curr) => [formData, ...curr]);
+    const newItem = new clothingItem("1", "1", formData.text, "Red", "Black", formData.selectedOption, "tshirt.png", true, false, true, false, true, false, true, false);
+
+    setClothingItems((curr) => [newItem, ...curr]);
+
+    console.log("Form submitted with:", newItem);
     closeModal();
   };
 
