@@ -37,8 +37,11 @@ export default function AddItem() {
             textColor={textColor}
             onSubmit={handleFormSubmit}
           />
-          <button formMethod="dialog" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
-          </button>
+          <button
+            formMethod="dialog"
+            onClick={closeModal}
+            className="modal-backdrop backdrop-blur-sm"
+          />
         </dialog>
       )}
     </>
