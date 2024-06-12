@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ItemExpanded from "./ItemExpanded";
 import Button from "../misc/Button";
+import useAppContext from "../../context/useAppContext";
 
 export default function AddItem() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const { clothingItems, setClothingItems } = useAppContext();
   const link = "tshirt.png";
   const text = "";
   const color = "";
@@ -20,6 +21,7 @@ export default function AddItem() {
 
   const handleFormSubmit = (formData) => {
     console.log("Form submitted with:", formData);
+    setClothingItems((curr) => [formData, ...curr]);
     closeModal();
   };
 
@@ -37,8 +39,11 @@ export default function AddItem() {
             textColor={textColor}
             onSubmit={handleFormSubmit}
           />
-          <button formMethod="dialog" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
-          </button>
+          <button
+            formMethod="dialog"
+            onClick={closeModal}
+            className="modal-backdrop backdrop-blur-sm"
+          />
         </dialog>
       )}
     </>
