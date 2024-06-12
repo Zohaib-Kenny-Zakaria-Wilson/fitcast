@@ -3,7 +3,8 @@ import { ItemTagContainer } from "./ItemTagContainer";
 
 export default function ItemExpanded({
   clothingItem,
-  onSubmit
+  onSubmit,
+  buttonText
 }) {
   // State to store the item being edited
   const [item, setItem] = useState(clothingItem);
@@ -98,7 +99,7 @@ export default function ItemExpanded({
           type="submit"
           className="py-3 rounded-md full bg-primary-tw text-background"
         >
-          <p>Add Item</p>
+          <p>{buttonText}</p>
         </button>
       </form>
     </div>

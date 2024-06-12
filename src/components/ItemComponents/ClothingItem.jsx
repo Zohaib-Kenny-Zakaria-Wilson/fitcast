@@ -56,6 +56,7 @@ export default function ClothingItem({ clothingItem }) {
           <ItemExpanded
             clothingItem={clothingItem}
             onSubmit={editItem}
+            buttonText="Save Changes"
           />
           <button type="button" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
             Close
