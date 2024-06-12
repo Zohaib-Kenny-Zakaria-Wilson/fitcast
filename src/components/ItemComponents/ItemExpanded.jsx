@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import { ItemTagContainer } from "./ItemTagContainer";
 
 export default function ItemExpanded({
-  link,
-  parentText,
-  color,
-  textColor,
+  clothingItem,
   onSubmit
 }) {
-  const [text, setText] = useState(parentText || "");
+  const [text, setText] = useState(clothingItem.name || "");
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleTextChange = (e) => {
@@ -27,12 +24,12 @@ export default function ItemExpanded({
   return (
     <div
       className={`modal-box min-w-[75vw] min-h-[50vw] xl:min-w-[60vw] xl:min-h-[35vw] p-12 flex gap-12 text-primary-tw`}
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: clothingItem.dominantColor }}
     >
       <div className="flex w-full min-h-full">
         <img
           className="object-cover w-full h-full rounded-lg"
-          src={`${process.env.PUBLIC_URL}/assets/${link}`}
+          src={`${process.env.PUBLIC_URL}/assets/${clothingItem.image}`}
           alt=""
         />
       </div>
