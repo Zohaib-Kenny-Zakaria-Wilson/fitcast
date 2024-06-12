@@ -23,10 +23,10 @@ function App() {
 
   return (
     <>
-      <main className={`w-screen flex gap-14 h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
+      {/* <main className={`w-screen flex gap-14 h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
         <Wthr toggleDarkMode={toggleDarkMode} />
         <TodayOutfitContainer />
-      </main>
+      </main> */}
       <AddItem/>
       <Wardrobe/>
     </>
