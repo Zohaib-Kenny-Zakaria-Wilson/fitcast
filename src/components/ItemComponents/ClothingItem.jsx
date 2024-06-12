@@ -50,6 +50,7 @@ export default function ClothingItem({ clothingItem }) {
     );
     closeModal();
   };
+  
   return (
     <>
       <button type="button" onClick={openModal}>
