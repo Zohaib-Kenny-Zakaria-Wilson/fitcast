@@ -7,7 +7,7 @@ export class clothingItem {
      * @param {String} dominantColor the dominant color of the clothing item
      * @param {String} contrastColor the contrasting color to the dominant color
      * @param {String} category the category of the clothing item
-     * @param {String} image the image of the clothing item
+     * @param {String} imageURL the image of the clothing item
      * @param {Boolean} hotWeather  if the clothing item is suitable for hot weather
      * @param {Boolean} coldWeather if the clothing item is suitable for cold weather
      * @param {Boolean} highWind if the clothing item is suitable for high wind
@@ -17,14 +17,14 @@ export class clothingItem {
      * @param {Boolean} highHumidity if the clothing item is suitable for high humidity
      * @param {Boolean} lowHumidity if the clothing item is suitable for low humidity
      */
-    constructor(id, userId, name, dominantColor, contrastColor, category, image, hotWeather, coldWeather, highWind, lowWind, highRain, lowRain, highHumidity, lowHumidity) {
+    constructor(id, userId, name, dominantColor, contrastColor, category, imageURL, hotWeather, coldWeather, highWind, lowWind, highRain, lowRain, highHumidity, lowHumidity) {
         this.id = id;
         this.userId = userId;
         this.name = name;
         this.dominantColor = dominantColor;
         this.contrastColor = contrastColor;
         this.category = category;
-        this.image = image;
+        this.imageURL = imageURL;
         this.hotWeather = hotWeather;
         this.coldWeather = coldWeather;
         this.highWind = highWind;
