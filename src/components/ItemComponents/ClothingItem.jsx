@@ -36,11 +36,11 @@ export default function ClothingItem({ clothingItem }) {
    * 
    * @returns {void}
    */
-  const editItem = (newClothingItem) => {
+  const editItem = (updatedItem) => {
     // Update the clothing items in the context by mapping over the items and replacing the one that was edited
     setClothingItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === clothingItem.id ? newClothingItem : item
+        item.id === clothingItem.id ? updatedItem : item
       )
     );
     // Close the modal
