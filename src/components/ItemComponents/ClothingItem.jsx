@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ItemMini from "./ItemMini";
 import ItemExpanded from "./ItemExpanded";
 import useAppContext from "../../context/useAppContext";
-import { clothingItem } from "../models/clothingItem";
 
 /**
  * 
