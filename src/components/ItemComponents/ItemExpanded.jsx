@@ -137,11 +137,11 @@ export default function ItemExpanded({
             value={item.name}
             placeholder="Enter item name"
             onChange={handleTextChange}
-            className="text-xl font-medium xl:text-2xl 2xl:text-4xl"
+            className="text-xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
             style={{ color: item.textColor }}
           />
           <select
-            className="flex w-full max-w-xs p-0 text-lg select"
+            className="flex w-full max-w-xs p-0 text-lg select bg-foreground focus:outline-none focus:border-transparent"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
