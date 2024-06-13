@@ -34,14 +34,9 @@ function App() {
         } />
         {/* Wardrobe Route */}
         <Route path="/wardrobe" element={
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-4">
-              <h1 className="text-2xl">Wardrobe</h1>
-              <Link to="/" className="text-blue-500 dark:text-blue-300">Back to Main</Link>
-            </div>
-            <AddItem />
+
             <Wardrobe />
-          </div>
+
         } />
       </Routes>
     </Router>
