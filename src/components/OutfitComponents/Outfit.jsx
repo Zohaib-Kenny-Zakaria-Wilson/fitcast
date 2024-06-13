@@ -10,12 +10,7 @@ export default function Outfit() {
         {clothingItems &&
           clothingItems.map((clothingItem) => {
             return (
-              <ClothingItem
-                link={"t-shirt.jpeg"}
-                text={clothingItem.name}
-                color={"#9E9E9E"}
-                textColor={"#262626"}
-              />
+              <ClothingItem clothingItem={clothingItem}/>
             );
           })}
       </main>
