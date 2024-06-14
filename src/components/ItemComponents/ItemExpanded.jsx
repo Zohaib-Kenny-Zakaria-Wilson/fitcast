@@ -48,7 +48,7 @@ export default function ItemExpanded({
   };
 
   /**
-   * handles the file change event
+   * Handles the file change event
    * @param {event} e 
    * @returns {void}
    */
