@@ -109,39 +109,43 @@ export default function ItemExpanded({
   };
 
   return (
-    <div
-      className={`modal-box min-w-[75vw] min-h-[50vw] xl:min-w-[60vw] xl:min-h-[35vw] p-12 flex gap-12 text-primary-tw`}
+    <main
+      className={`modal-box min-w-fit p-12 flex gap-12 text-primary-tw max-w-[60vw]`}
       style={{ backgroundColor: item.dominantColor }}
     >
-      <div className="relative w-full min-h-full">
-        <img
-          className="object-cover w-full h-full rounded-lg"
-          src={item.imageURL || PLACEHOLDER_IMAGE_URL}
-          alt=""
-        />
-        <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
-          <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw text-background">Add a file</span>
-          <input
-            type="file"
-            className="hidden"
-            onChange={handleFileChange}
-          />
-        </label>
-      </div>
+      <div 
+  className="relative w-full rounded-lg" 
+  style={{ 
+    backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`, 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center' 
+  }}
+>
+  <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
+    <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw text-background">Add a file</span>
+    <input
+      type="file"
+      className="hidden"
+      onChange={handleFileChange}
+    />
+  </label>
+</div>
+
       <form
-        className="flex flex-col justify-between w-full min-h-full px-6 py-6 rounded-lg bg-foreground"
+        className="flex flex-col justify-between min-h-full gap-6 px-6 py-6 rounded-lg w-fit bg-foreground"
         onSubmit={handleSubmit}
       >
-        <div>
+        <div className="w-full">
           <input
             value={item.name}
             placeholder="Enter item name"
             onChange={handleTextChange}
-            className="text-xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
+            className="box-content max-w-full text-xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
             style={{ color: item.textColor }}
           />
+          
           <select
-            className="flex w-full max-w-xs p-0 text-lg select bg-foreground focus:outline-none focus:border-transparent"
+            className="flex w-full max-w-xs p-0 text-xl select bg-foreground focus:outline-none focus:border-transparent"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
@@ -158,11 +162,11 @@ export default function ItemExpanded({
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
         <button
           type="submit"
-          className="py-3 rounded-md full bg-primary-tw text-background"
+          className="py-3 rounded-md full w-96 bg-primary-tw text-background"
         >
           <p>{buttonText}</p>
         </button>
       </form>
-    </div>
+    </main>
   );
 }

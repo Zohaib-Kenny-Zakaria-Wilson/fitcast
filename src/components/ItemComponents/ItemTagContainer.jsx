@@ -4,7 +4,7 @@ import ItemTag from "./ItemTag";
 export function ItemTagContainer({ tagsState, toggleTag }) {
   return (
     <>
-      <p>Great For</p>
+      <p className="text-xl">Great For</p>
       <div className="flex flex-col gap-4">
         <div className="flex gap-4 w-fit h-fit">
           <ItemTag
