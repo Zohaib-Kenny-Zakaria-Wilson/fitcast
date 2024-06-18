@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Wthr from './components/Wthr';
 import TodayOutfitContainer from './components/TodayOutfitContainer';
-import AddItem from './components/ItemComponents/AddItem';
 import Wardrobe from './components/Wardrobe';
 
 function App() {
