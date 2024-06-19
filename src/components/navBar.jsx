@@ -3,13 +3,13 @@ import React from "react";
 export default function NavBar() {
   return (
     <>
-    <main className="w-full max-h-fit">
+    <main className="flex justify-end w-full max-h-fit">
         {/* Search Bar*/}
         <div></div>
         {/* Dark Mode Button */}
-        <button></button>
+        <button className="rounded-full size-12 bg-primary-tw"></button>
         { /* Profile */}
-        <button></button>
+        <button className="rounded-full size-12 bg-primary-tw"></button>
     </main>
     </>
   );
