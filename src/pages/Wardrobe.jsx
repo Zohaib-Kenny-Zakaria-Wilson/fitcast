@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import useAppContext from "../context/useAppContext";
-import ClothingItem from "./ItemComponents/ClothingItem";
+import ClothingItem from "../components/ItemComponents/ClothingItem";
 import AddItem from "../components/ItemComponents/AddItem";
 import { Link } from "react-router-dom";
-import NavBar from "./navBar";
+import NavBar from "../components/navBar";
 
 export default function Wardrobe() {
   const { clothingItems } = useAppContext();

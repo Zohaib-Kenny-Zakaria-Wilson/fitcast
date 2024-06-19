@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Wardrobe from './components/Wardrobe';
+import Wardrobe from './pages/Wardrobe';
 import DailyOutfitPage from './pages/DailyOutfitPage';
 
 function App() {
