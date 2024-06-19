@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useAppContext from "../context/useAppContext";
 import ClothingItem from "./ItemComponents/ClothingItem";
 import AddItem from "../components/ItemComponents/AddItem";
@@ -7,6 +7,30 @@ import NavBar from "./navBar";
 
 export default function Wardrobe() {
   const { clothingItems } = useAppContext();
+  const [filter, setFilter] = useState("");
+  const [sort, setSort] = useState("");
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleSortChange = (e) => {
+    setSort(e.target.value);
+  };
+
+  const filteredClothingItems = clothingItems.filter((item) => {
+    if (!filter) return true;
+    return item.category === filter;
+  });
+
+  const sortedClothingItems = filteredClothingItems.sort((a, b) => {
+    if (sort === "nameAsc") {
+      return a.name.localeCompare(b.name);
+    } else if (sort === "nameDesc") {
+      return b.name.localeCompare(a.name);
+    }
+    return 0;
+  });
 
   return (
     <>
@@ -21,12 +45,30 @@ export default function Wardrobe() {
               <p className="font-medium text-primary-tw dark:text-dark-primary-tw 2xl:text-3xl">
                 Wardrobe
               </p>
-              <button className="h-full px-4 py-1 rounded-md bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw">
-                Filter
-              </button>
-              <button className="h-full px-4 py-1 rounded-md bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw">
-                Sort
-              </button>
+              <div className="select-wrapper">
+                <select
+                  value={filter}
+                  onChange={handleFilterChange}
+                  className="h-full px-4 py-2 rounded-md select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                >
+                  <option className="w-fit" value="">Filter</option>
+                  <option value="Shirt">Shirts</option>
+                  <option value="Pants">Pants</option>
+                  <option value="Shoes">Shoes</option>
+                  <option value="Accessories">Accessories</option>
+                </select>
+              </div>
+              <div className="select-wrapper">
+                <select
+                  value={sort}
+                  onChange={handleSortChange}
+                  className="h-full px-4 py-2 rounded-md select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                >
+                  <option value="">Sort</option>
+                  <option value="nameAsc">Name (A-Z)</option>
+                  <option value="nameDesc">Name (Z-A)</option>
+                </select>
+              </div>
             </div>
             {/* Wardrobe Header Right */}
             <div className="flex items-start gap-6 w-fit">
@@ -39,9 +81,9 @@ export default function Wardrobe() {
             </div>
           </div>
           {/* Render Clothing Items or Empty Message */}
-          {clothingItems && clothingItems.length > 0 ? (
+          {sortedClothingItems && sortedClothingItems.length > 0 ? (
             <div className="grid w-full grid-cols-6 gap-4 p-10 rounded-md bg-foreground dark:bg-dark-foreground">
-              {clothingItems.map((clothingItem) => (
+              {sortedClothingItems.map((clothingItem) => (
                 <ClothingItem key={clothingItem.id} clothingItem={clothingItem} />
               ))}
             </div>
