@@ -1,9 +1,10 @@
 import React from "react";
-import { SearchBar } from "./misc/SearchBar";
-import { DarkModeButton } from "./misc/DarkModeButton";
-import useDarkMode from '../hooks/useDarkMode';
+import { SearchBar } from "../misc/SearchBar";
+import { DarkModeButton } from "../misc/DarkModeButton";
+import useDarkMode from '../../hooks/useDarkMode';
 
 export default function NavBar() {
+  // State for toggling dark mode
   const [, toggleDarkMode] = useDarkMode();
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "../components/navBar";
-import TodayOutfitContainer from "../components/TodayOutfitContainer";
-import Wthr from "../components/Wthr";
+import NavBar from "../components/PageComponents/navBar";
+import TodayOutfitContainer from "../components/PageComponents/TodayOutfitContainer";
+import Wthr from "../components/PageComponents/Wthr";
 
 export default function DailyOutfitPage() {
     return (

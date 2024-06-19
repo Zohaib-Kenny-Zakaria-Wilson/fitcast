@@ -3,7 +3,7 @@ import useAppContext from "../context/useAppContext";
 import ClothingItem from "../components/ItemComponents/ClothingItem";
 import AddItem from "../components/ItemComponents/AddItem";
 import { Link } from "react-router-dom";
-import NavBar from "../components/navBar";
+import NavBar from "../components/PageComponents/navBar";
 
 export default function Wardrobe() {
   const { clothingItems } = useAppContext();

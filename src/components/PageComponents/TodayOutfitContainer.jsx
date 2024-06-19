@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Outfit from "./OutfitComponents/Outfit";
+import Outfit from "../OutfitComponents/Outfit";
 
 export default function TodayOutfitContainer() {
   return (
