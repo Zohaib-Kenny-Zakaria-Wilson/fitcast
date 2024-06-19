@@ -7,11 +7,11 @@ export function ItemTagContainer({ tagsState, toggleTag }) {
 
   // Define colors based on the dark mode state
   const backgroundColor = isDarkMode ? "#373737" : "#FFFFFF";
-  const textColor = isDarkMode ? "#C7C7C7" : "494747";
+  const textColor = isDarkMode ? "#C7C7C7" : "secondary-tw";
 
   return (
     <main className="flex flex-col gap-2 min-w-fit">
-      <p className={`text-xl ${isDarkMode ? 'text-dark-primary-tw' : 'text-primary-tw'}`}>Great For:</p>
+      <p className={`text-xl ${isDarkMode ? 'text-dark-primary-tw' : 'text-secondary-tw'}`}>Great For:</p>
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4 w-fit h-fit">
           <ItemTag
