@@ -8,13 +8,14 @@ export default function ItemMini({ clothingItem }) {
       className={`flex flex-col  rounded-md`}
       style={{ backgroundColor: clothingItem.dominantColor }}
     >
-      <div className="w-48 h-48">
-        <img
-          className="object-cover object-center w-full h-full rounded-t-md"
-          src={clothingItem.imageURL || PLACEHOLDER_IMAGE_URL}
-          alt=""
-        />
-      </div>
+      <div 
+  className="w-full h-52 rounded-t-md" 
+  style={{ 
+    backgroundImage: `url(${clothingItem.imageURL || PLACEHOLDER_IMAGE_URL})`, 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center' 
+  }}
+></div>
       <div className="flex items-center justify-center w-full py-5 bg-opacity-50 rounded-b-md h-fit" style={{ backgroundColor: clothingItem.dominantColor }}>
         <p className="text-center" style={{ color: clothingItem.contrastColor }}>
           {clothingItem.name}
