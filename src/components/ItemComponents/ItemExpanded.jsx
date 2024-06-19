@@ -129,8 +129,10 @@ export default function ItemExpanded({
           backgroundPosition: 'center' 
         }}
       >
+        {/* Image Overlay */}
         <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
           <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw dark:bg-primary-tw-dark text-background">Add a file</span>
+          {/* Image Input */}
           <input
             type="file"
             className="hidden"
@@ -138,12 +140,14 @@ export default function ItemExpanded({
           />
         </label>
       </div>
-
+      {/* Form */}
       <form
         className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-lg lg:w-1/2 bg-foreground dark:bg-dark-foreground"
         onSubmit={handleSubmit}
       >
+        { /* Top Selection */}
         <div className="w-full">
+          {/* Item Name */}
           <input
             value={item.name}
             placeholder="Enter item name"
@@ -151,7 +155,7 @@ export default function ItemExpanded({
             className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground dark:bg-dark-foreground focus:outline-none dark:text-dark-primary-tw text-primary-tw"
             style={{ color: item.textColor }}
           />
-          
+          { /* Category Selection */}
           <select
             className="flex w-1/2 p-0 text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
             value={item.category}
@@ -167,7 +171,9 @@ export default function ItemExpanded({
             <option>Accessories</option>
           </select>
         </div>
+        {/* Item Tags */}
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
+        {/* Submit Button */}
         <button
           type="submit"
           className="w-full py-3 rounded-md bg-primary-tw dark:bg-dark-primary-tw text-background dark:text-dark-background"
