@@ -7,6 +7,7 @@ export default function DailyOutfitPage() {
     return (
         <main className={`w-screen flex gap-14 h-screen px-14 py-10 bg-background dark:bg-dark-background`}>
             <Wthr />
+            { /* Right Side */}
             <div className="flex flex-col w-full h-screen rounded-lg gap-9 bg-background dark:bg-dark-background">
             <NavBar />
             <TodayOutfitContainer />
