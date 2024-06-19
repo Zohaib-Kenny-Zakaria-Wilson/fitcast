@@ -3,7 +3,7 @@ import React from "react";
 export default function NavBar() {
   return (
     <>
-    <main>
+    <main className="w-full max-h-fit">
         {/* Search Bar*/}
         <div></div>
         {/* Dark Mode Button */}

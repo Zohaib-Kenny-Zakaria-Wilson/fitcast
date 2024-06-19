@@ -10,7 +10,7 @@ export default function Wardrobe() {
 
   return (
     <>
-      <div className="flex flex-wrap justify-start w-full h-screen py-10 rounded-lg px-14 gap-9 bg-background">
+      <div className="flex flex-col w-full h-screen py-10 rounded-lg px-14 gap-9 bg-background">
         <NavBar />
         {/* Wardrobe Container */}
         <main className="flex flex-col w-full gap-8">
