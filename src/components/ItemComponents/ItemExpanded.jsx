@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ItemTagContainer } from "./ItemTagContainer";
 import ColorThief from 'colorthief';
 import chroma from 'chroma-js';
+import useDarkMode from "../../hooks/useDarkMode";
+
 
 // Placeholder image for the image when no image is found
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
@@ -13,6 +15,7 @@ export default function ItemExpanded({
 }) {
   // State to store the item being created/edited
   const [item, setItem] = useState(clothingItem);
+  const [isDarkMode] = useDarkMode();
 
   /**
    * handles the text change event
@@ -108,14 +111,17 @@ export default function ItemExpanded({
     onSubmit(item);
   };
 
+  // NOTICE: The backgroundColor is set to the item's dominant color if it exists, otherwise it is set to the dark mode or light mode background color
+  const backgroundColor = item.dominantColor && item.dominantColor.trim() !== "" ? item.dominantColor : (isDarkMode ? "#272626" : "#F0F0F0");
+
+
   return (
     <main
-      className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw
-        `}
-      style={{ backgroundColor: item.dominantColor }}
+      className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw dark:bg-dark-foreground`}
+      style={{ backgroundColor: backgroundColor }}
     >
       <div 
-        className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-lg" 
+        className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-lg overflow-hidden" 
         style={{ 
           backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`, 
           backgroundSize: 'cover', 
@@ -123,7 +129,7 @@ export default function ItemExpanded({
         }}
       >
         <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
-          <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw text-background">Add a file</span>
+          <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw dark:bg-primary-tw-dark text-background">Add a file</span>
           <input
             type="file"
             className="hidden"
@@ -133,7 +139,7 @@ export default function ItemExpanded({
       </div>
 
       <form
-        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-lg lg:w-1/2 bg-foreground"
+        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-lg lg:w-1/2 bg-foreground dark:bg-dark-foreground"
         onSubmit={handleSubmit}
       >
         <div className="w-full">
@@ -141,12 +147,12 @@ export default function ItemExpanded({
             value={item.name}
             placeholder="Enter item name"
             onChange={handleTextChange}
-            className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
+            className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground dark:bg-dark-foreground focus:outline-none dark:text-dark-primary-tw text-primary-tw"
             style={{ color: item.textColor }}
           />
           
           <select
-            className="flex w-full p-0 text-lg select bg-foreground focus:outline-none focus:border-transparent"
+            className="flex w-full p-0 text-lg select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-primary-tw"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
@@ -163,7 +169,7 @@ export default function ItemExpanded({
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
         <button
           type="submit"
-          className="w-full py-3 rounded-md bg-primary-tw text-background"
+          className="w-full py-3 rounded-md bg-primary-tw dark:bg-dark-primary-tw text-background dark:text-dark-background"
         >
           <p>{buttonText}</p>
         </button>

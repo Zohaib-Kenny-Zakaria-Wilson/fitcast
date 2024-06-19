@@ -48,7 +48,7 @@ export default function AddItem() {
       {isModalOpen && (
         <dialog open className="modal">
           <ItemExpanded
-            clothingItem={new clothingItem("", "", "", "#FFFFFF", "#000000", "", "", false, false, false, false, false, false, false, false)}
+            clothingItem={new clothingItem("", "", "", "", "", "", "", false, false, false, false, false, false, false, false)}
             onSubmit={addItem}
             buttonText={"Add Item"}
           />

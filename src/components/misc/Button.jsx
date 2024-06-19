@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Button({ children }) {
   return (
-    <button className="box-border px-4 py-2 rounded-md bg-primary-tw text-background ">
+    <button className="box-border px-4 py-2 rounded-md bg-primary-tw dark:bg-dark-foreground dark:text-dark-primary-tw text-background ">
       {children}
     </button>
   );
