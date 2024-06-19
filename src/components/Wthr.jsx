@@ -3,6 +3,7 @@ import WeatherKeyInfo from "./WthrComponents/WthrStats";
 import { Logo } from "./misc/Logo";
 import useWeather from "../hooks/useWeather";
 import useAstro from "../hooks/useAstro";
+import { getWeatherIcon } from "../utils/getWeatherIcon";
 
 function Wthr({ toggleDarkMode }) {
   const { data } = useWeather();
@@ -19,7 +20,7 @@ function Wthr({ toggleDarkMode }) {
             )}
             <img
               className="size-24 xl:size-36 2xl:size-48"
-              src={`${process.env.PUBLIC_URL}/assets/clear-day.svg`}
+              src={getWeatherIcon(data && data.current.condition.code, 1)}
               alt="Clear Day"
             />
             <div className="flex flex-col xl:gap-1 2xl:gap-2">
@@ -48,7 +49,7 @@ function Wthr({ toggleDarkMode }) {
               <WeatherKeyInfo svg="humidity" text={data.current.humidity} />
               {/* Weather Key Pair */}
               <WeatherKeyInfo svg="wind" text={data.current.wind_mph} />
-              <WeatherKeyInfo svg="raindrops" text={data.current.precip_mm} />
+              <WeatherKeyInfo svg="drizzle" text={data.current.precip_mm} />
             </div>
           )}
         </div>
