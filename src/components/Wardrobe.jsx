@@ -32,7 +32,7 @@ export default function Wardrobe() {
             <div className="flex items-start gap-6 w-fit">
               <AddItem />
               <Link className="h-full" to="/">
-                <button className="h-full px-4 py-1 rounded-md bg-foreground dark:bg-dark-primary-tw text-primary-tw">
+                <button className="px-4 py-2 rounded text-primary-tw dark:text-dark-background bg-foreground dark:bg-dark-primary-tw">
                   Today's Outfit
                 </button>
               </Link>
