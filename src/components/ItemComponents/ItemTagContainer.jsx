@@ -4,9 +4,10 @@ import ItemTag from "./ItemTag";
 export function ItemTagContainer({ tagsState, toggleTag }) {
   return (
     <>
+    <main className="min-w-fit">
       <p className="text-xl">Great For</p>
       <div className="flex flex-col gap-4">
-        <div className="flex gap-4 w-fit h-fit">
+        <div className="flex items-center gap-4 w-fit h-fit">
           <ItemTag
             onClick={() => toggleTag('coldWeather')}
             text={"Cold Weather"}
@@ -22,7 +23,7 @@ export function ItemTagContainer({ tagsState, toggleTag }) {
             borderColor={tagsState.hotWeather ? "#FFA4A4" : "#FFA4A4"}
           />
         </div>
-        <div className="flex gap-4 w-fit h-fit">
+        <div className="flex w-full gap-4 h-fit">
           <ItemTag
             onClick={() => toggleTag('lowWind')}
             text={"Low Wind"}
@@ -71,6 +72,7 @@ export function ItemTagContainer({ tagsState, toggleTag }) {
           />
         </div>
       </div>
+      </main>
     </>
   );
 }
