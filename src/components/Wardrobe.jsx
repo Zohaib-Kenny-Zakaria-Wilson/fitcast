@@ -32,7 +32,7 @@ export default function Wardrobe() {
             <div className="flex items-start gap-6 w-fit">
               <AddItem />
               <Link className="h-full" to="/">
-                <button className="h-full px-4 py-1 rounded-md bg-foreground text-primary-tw">
+                <button className="h-full px-4 py-1 rounded-md bg-foreground dark:bg-dark-primary-tw text-primary-tw">
                   Today's Outfit
                 </button>
               </Link>
@@ -40,7 +40,7 @@ export default function Wardrobe() {
           </div>
           {/* Render Clothing Items or Empty Message */}
           {clothingItems && clothingItems.length > 0 ? (
-            <div className="grid w-full grid-cols-8 gap-4 p-8 rounded-md bg-foreground dark:bg-dark-foreground">
+            <div className="grid w-full grid-cols-6 gap-4 p-10 rounded-md bg-foreground dark:bg-dark-foreground">
               {clothingItems.map((clothingItem) => (
                 <ClothingItem key={clothingItem.id} clothingItem={clothingItem} />
               ))}
