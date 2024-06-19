@@ -11,7 +11,7 @@ function App() {
       <Routes>
         {/* Main Route */}
         <Route path="/" element={
-          <main className={`w-screen flex gap-14 h-screen px-14 py-10 2xl:px-20 2xl:py-16 bg-background dark:bg-dark-background`}>
+          <main className={`w-screen flex gap-14 h-screen px-14 py-10 bg-background dark:bg-dark-background`}>
             <Wthr />
             <div className="flex flex-col w-full h-screen rounded-lg gap-9 bg-background dark:bg-dark-background">
             <NavBar />
