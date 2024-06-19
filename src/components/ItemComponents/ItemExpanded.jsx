@@ -120,6 +120,7 @@ export default function ItemExpanded({
       className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw dark:bg-dark-foreground`}
       style={{ backgroundColor: backgroundColor }}
     >
+      {/* Image Upload */}
       <div 
         className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-lg overflow-hidden" 
         style={{ 
