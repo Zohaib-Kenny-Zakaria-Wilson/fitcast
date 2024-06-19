@@ -5,7 +5,7 @@ import useWeather from "../hooks/useWeather";
 import useAstro from "../hooks/useAstro";
 import { getWeatherIcon } from "../utils/getWeatherIcon";
 
-function Wthr({ toggleDarkMode }) {
+function Wthr() {
   const { data } = useWeather();
   const { astroData } = useAstro();
   return (
@@ -54,7 +54,7 @@ function Wthr({ toggleDarkMode }) {
           )}
         </div>
         {/* Logo */}
-        <Logo onClick={toggleDarkMode} />
+        <Logo />
       </div>
     </div>
   );
