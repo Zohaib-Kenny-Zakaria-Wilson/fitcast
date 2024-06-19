@@ -3,7 +3,7 @@ import { ItemTagContainer } from "./ItemTagContainer";
 import ColorThief from 'colorthief';
 import chroma from 'chroma-js';
 
-//Placeholder image for the image when no image is found
+// Placeholder image for the image when no image is found
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 
 export default function ItemExpanded({
@@ -16,7 +16,7 @@ export default function ItemExpanded({
 
   /**
    * handles the text change event
-   * @param {event} tag 
+   * @param {event} e
    */
   const handleTextChange = (e) => {
     setItem({
@@ -27,7 +27,7 @@ export default function ItemExpanded({
 
   /**
    * handles the category change event
-   * @param {event} tag 
+   * @param {event} e
    */
   const handleSelectChange = (e) => {
     setItem({
@@ -38,7 +38,7 @@ export default function ItemExpanded({
 
   /**
    * handles the tag toggle event
-   * @param {event} tag 
+   * @param {event} tag
    */
   const toggleTag = (tag) => {
     setItem((prevItem) => ({
@@ -49,7 +49,7 @@ export default function ItemExpanded({
 
   /**
    * Handles the file change event
-   * @param {event} e 
+   * @param {event} e
    * @returns {void}
    */
   const handleFileChange = (e) => {
@@ -73,7 +73,7 @@ export default function ItemExpanded({
 
   /**
    * Extracts the dominant color from the image and sets the item's dominant color and contrast color
-   * @param {event} imageURL 
+   * @param {event} imageURL
    */
   const extractDominantColor = (imageURL) => {
     const img = new Image();
@@ -101,7 +101,7 @@ export default function ItemExpanded({
 
   /**
    * handles the form submission event
-   * @param {event} e 
+   * @param {event} e
    */
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -110,29 +110,30 @@ export default function ItemExpanded({
 
   return (
     <main
-      className={`modal-box min-w-fit p-12 flex gap-12 text-primary-tw max-w-[60vw]`}
+      className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw
+        `}
       style={{ backgroundColor: item.dominantColor }}
     >
       <div 
-  className="relative w-full rounded-lg" 
-  style={{ 
-    backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`, 
-    backgroundSize: 'cover', 
-    backgroundPosition: 'center' 
-  }}
->
-  <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
-    <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw text-background">Add a file</span>
-    <input
-      type="file"
-      className="hidden"
-      onChange={handleFileChange}
-    />
-  </label>
-</div>
+        className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-lg" 
+        style={{ 
+          backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`, 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center' 
+        }}
+      >
+        <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
+          <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw text-background">Add a file</span>
+          <input
+            type="file"
+            className="hidden"
+            onChange={handleFileChange}
+          />
+        </label>
+      </div>
 
       <form
-        className="flex flex-col justify-between min-h-full gap-6 px-6 py-6 rounded-lg w-fit bg-foreground"
+        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-lg lg:w-1/2 bg-foreground"
         onSubmit={handleSubmit}
       >
         <div className="w-full">
@@ -140,12 +141,12 @@ export default function ItemExpanded({
             value={item.name}
             placeholder="Enter item name"
             onChange={handleTextChange}
-            className="box-content max-w-full text-xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
+            className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground focus:outline-none"
             style={{ color: item.textColor }}
           />
           
           <select
-            className="flex w-full max-w-xs p-0 text-xl select bg-foreground focus:outline-none focus:border-transparent"
+            className="flex w-full p-0 text-lg select bg-foreground focus:outline-none focus:border-transparent"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
@@ -162,7 +163,7 @@ export default function ItemExpanded({
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
         <button
           type="submit"
-          className="py-3 rounded-md full w-96 bg-primary-tw text-background"
+          className="w-full py-3 rounded-md bg-primary-tw text-background"
         >
           <p>{buttonText}</p>
         </button>
