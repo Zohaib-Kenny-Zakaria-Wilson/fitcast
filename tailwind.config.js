@@ -12,8 +12,8 @@ module.exports = {
       'foreground': '#ffffff',
       'primary-tw': '#494747',
       'component-border': '#DFDFDF',
-      'dark-background': '#212121', // Dark mode background
-      'dark-foreground': '#2e2e2e', // Dark mode foreground
+      'dark-background': '#272626', // Dark mode background
+      'dark-foreground': '#373737', // Dark mode foreground
       'dark-primary-tw': '#C7C7C7', // Dark mode primary-tw text
       'dark-component-border': '#1A1A1A', // Dark mode border
     },
