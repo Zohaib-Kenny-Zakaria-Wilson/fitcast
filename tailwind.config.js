@@ -11,6 +11,7 @@ module.exports = {
       'background': '#f0f0f0',
       'foreground': '#ffffff',
       'primary-tw': '#494747',
+      'secondary-tw': '#7A7A7A',
       'component-border': '#DFDFDF',
       'dark-background': '#272626', // Dark mode background
       'dark-foreground': '#373737', // Dark mode foreground
