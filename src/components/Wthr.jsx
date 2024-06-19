@@ -45,11 +45,11 @@ function Wthr({ toggleDarkMode }) {
                 text={astroData.astronomy.astro.sunset}
               />
               {/* Weather Key Pair */}
-              <WeatherKeyInfo svg="thermometer" text={data.current.temp_f} />
-              <WeatherKeyInfo svg="humidity" text={data.current.humidity} />
+              <WeatherKeyInfo svg="thermometer" text={data.current.temp_f + "°F"} />
+              <WeatherKeyInfo svg="humidity" text={data.current.humidity } />
               {/* Weather Key Pair */}
-              <WeatherKeyInfo svg="wind" text={data.current.wind_mph} />
-              <WeatherKeyInfo svg="drizzle" text={data.current.precip_mm} />
+              <WeatherKeyInfo svg="wind" text={data.current.wind_mph + " mph"} />
+              <WeatherKeyInfo svg="drizzle" text={data.current.precip_mm + " mm"} />
             </div>
           )}
         </div>
