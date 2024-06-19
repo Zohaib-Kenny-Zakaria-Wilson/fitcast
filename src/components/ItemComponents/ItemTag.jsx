@@ -4,10 +4,10 @@ export default function ItemTag({ onClick, text, color, textColor, borderColor }
   return (
     <div
       onClick={onClick}
-      className="flex justify-center gap-2 px-1 py-1 border-2 rounded-lg cursor-pointer w-fit xl:px-2 xl:py-2"
+      className="flex justify-center gap-2 px-2 py-2 border-2 rounded-lg cursor-pointer w-fit"
       style={{ backgroundColor: color, color: textColor, borderColor: borderColor }}
     >
-      <p className="text-xs 2xl:text-base">{text}</p>
+      <p className="text-xs md:text-base">{text}</p>
     </div>
   );
 }
