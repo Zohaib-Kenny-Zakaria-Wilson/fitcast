@@ -7,7 +7,7 @@ export function ItemTagContainer({ tagsState, toggleTag }) {
 
   // Define colors based on the dark mode state
   const backgroundColor = isDarkMode ? "#373737" : "#FFFFFF";
-  const textColor = isDarkMode ? "#C7C7C7" : "#2477B2";
+  const textColor = isDarkMode ? "#C7C7C7" : "494747";
 
   return (
     <main className="flex flex-col gap-2 min-w-fit">
