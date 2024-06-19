@@ -152,7 +152,7 @@ export default function ItemExpanded({
           />
           
           <select
-            className="flex w-full p-0 text-lg select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-primary-tw"
+            className="flex w-1/2 p-0 text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
