@@ -16,8 +16,7 @@ function App() {
             <div className="flex flex-col w-full h-screen rounded-lg gap-9 bg-background dark:bg-dark-background">
             <NavBar />
             <TodayOutfitContainer />
-            </div>
-            
+            </div>  
           </main>
         } />
         {/* Wardrobe Route */}
