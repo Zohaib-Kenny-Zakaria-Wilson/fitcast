@@ -42,7 +42,7 @@ export default function Wardrobe() {
           <div className="flex justify-between w-full">
             {/* Wardrobe Header Left */}
             <div className="flex items-start gap-6 w-fit">
-              <p className="font-medium text-primary-tw dark:text-dark-primary-tw 2xl:text-3xl">
+              <p className="text-3xl font-medium text-primary-tw dark:text-dark-primary-tw">
                 Wardrobe
               </p>
               <div className="select-wrapper">
