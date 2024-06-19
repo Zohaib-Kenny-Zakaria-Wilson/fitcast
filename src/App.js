@@ -33,9 +33,7 @@ function App() {
         } />
         {/* Wardrobe Route */}
         <Route path="/wardrobe" element={
-
             <Wardrobe />
-
         } />
       </Routes>
     </Router>
