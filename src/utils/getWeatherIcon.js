@@ -49,8 +49,6 @@ export const weatherIcons = {
     1282: { day: "assets/thunderstorms.svg", night: "assets/thunderstorms.svg" }
 }
 
-
-
 /**
  * Function to get the weather icon path based on condition code and time of day
  * @param {number} conditionCode - The weather condition code

@@ -1,9 +1,9 @@
 import React from "react";
-import WeatherKeyInfo from "./WthrComponents/WthrStats";
-import { Logo } from "./misc/Logo";
-import useWeather from "../hooks/useWeather";
-import useAstro from "../hooks/useAstro";
-import { getWeatherIcon } from "../utils/getWeatherIcon";
+import WeatherKeyInfo from "../WthrComponents/WthrStats";
+import { Logo } from "../misc/Logo";
+import useWeather from "../../hooks/useWeather";
+import useAstro from "../../hooks/useAstro";
+import { getWeatherIcon } from "../../utils/getWeatherIcon";
 
 function Wthr() {
   const { data } = useWeather();
