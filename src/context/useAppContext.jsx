@@ -7,7 +7,6 @@ export default function useAppContext() {
 }
 
 export function AppProvider(props) {
-  //TODO: Create const for current weather and forecast.
   const [currentData, setCurrentData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   
