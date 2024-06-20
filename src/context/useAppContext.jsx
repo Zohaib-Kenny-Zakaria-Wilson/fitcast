@@ -7,8 +7,8 @@ export default function useAppContext() {
 }
 
 export function AppProvider(props) {
-  const [currentData, setCurrentData] = useState(null);
-  const [forecastData, setForecastData] = useState(null);
+  const [globalCurrentData, setGlobalCurrentData] = useState(null);
+  const [globalForecastData, setGlobalForecastData] = useState(null);
   
   const [wthrConditions, setWthrConditions] = useState();
 
@@ -39,7 +39,7 @@ export function AppProvider(props) {
   ]);
 
   return (
-    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions, currentData, setCurrentData, forecastData, setForecastData }}>
+    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions, globalCurrentData, setGlobalCurrentData, globalForecastData, setGlobalForecastData }}>
       {props.children}
     </AppContext.Provider>
   );
