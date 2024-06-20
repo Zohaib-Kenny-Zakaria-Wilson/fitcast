@@ -6,7 +6,7 @@ export default function Outfit() {
   const { clothingItems } = useAppContext();
   return (
     <>
-      <main className="flex justify-evenly">
+      <main className="grid min-w-full grid-cols-4 gap-12">
         {clothingItems &&
           clothingItems.map((clothingItem) => {
             return (
