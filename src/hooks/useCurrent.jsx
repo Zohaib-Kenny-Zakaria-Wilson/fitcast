@@ -16,6 +16,8 @@ export default function useCurrent() {
           position.coords.longitude.toFixed(4);
         setCoords(coordsVar);
       });
+      // Avoids running the fetch if coords is null
+      if (!coords) return;
       const baseUrl =
         "http://api.weatherapi.com/v1/current.json?key=" +
         process.env.REACT_APP_API_KEY +
@@ -33,7 +35,8 @@ export default function useCurrent() {
           .then((response) => response.json())
           .then((data) => {
             setCurrentData(data);
-            setIsLoading(false); // Set loading to false after data is fetched
+            // Set loading to false after the data is fetched
+            setIsLoading(false);
           })
           .catch((err) => {
             console.error(err);
