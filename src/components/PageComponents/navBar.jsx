@@ -1,7 +1,8 @@
 import React from "react";
 import { SearchBar } from "../misc/SearchBar";
 import { DarkModeButton } from "../misc/DarkModeButton";
-import useDarkMode from '../../hooks/useDarkMode';
+import useDarkMode from "../../hooks/useDarkMode";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   // State for toggling dark mode
@@ -14,14 +15,17 @@ export default function NavBar() {
       {/* Dark Mode Button */}
       <DarkModeButton onClick={toggleDarkMode} />
       {/* Profile */}
-      <button
+      <Link
+        to="/settings"
         className="rounded-full size-12 bg-primary-tw"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/base-profile.jpeg'})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/assets/base-profile.jpeg"
+          })`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
-      ></button>
+      ></Link>
     </main>
   );
 }
