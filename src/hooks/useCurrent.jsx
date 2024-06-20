@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default function useWeather() {
-  const [data, setData] = useState(null);
+export default function useCurrent() {
+  const [currentData, setCurrentData] = useState(null);
   const [error, setError] = useState(null);
   const [coords, setCoords] = useState(null);
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function useWeather() {
         process.env.REACT_APP_API_KEY +
         "&q=" +
         coords;
-      setData(null);
+      setCurrentData(null);
       setError(null);
       try {
         await fetch(baseUrl, {
@@ -29,7 +29,7 @@ export default function useWeather() {
           },
         })
           .then((response) => response.json())
-          .then((data) => setData(data))
+          .then((data) => setCurrentData(data))
           .catch((err) => console.error(err));
       } catch (e) {
         setError(e);
@@ -38,5 +38,5 @@ export default function useWeather() {
     init();
   }, [coords]);
 
-  return { data, error };
+  return { currentData, error };
 }

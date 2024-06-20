@@ -7,6 +7,11 @@ export default function useAppContext() {
 }
 
 export function AppProvider(props) {
+  const [globalCurrentData, setGlobalCurrentData] = useState(null);
+  const [globalForecastData, setGlobalForecastData] = useState(null);
+  
+  const [wthrConditions, setWthrConditions] = useState();
+
   const [clothingItems, setClothingItems] = useState([
     new clothingItem("1", "", "Red T-Shirt", "Red", "White", "shirt", "", true, false, false, true, false, true, false, true),
     new clothingItem("2", "", "Blue Polo", "Blue", "White", "shirt", "", true, false, false, true, false, true, false, true),
@@ -33,10 +38,8 @@ export function AppProvider(props) {
     new clothingItem("20", "", "Red Heels", "Red", "Black", "shoes", "", true, false, false, true, false, true, false, true),
   ]);
 
-  const [wthrConditions, setWthrConditions] = useState();
-
   return (
-    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions }}>
+    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions, globalCurrentData, setGlobalCurrentData, globalForecastData, setGlobalForecastData }}>
       {props.children}
     </AppContext.Provider>
   );
