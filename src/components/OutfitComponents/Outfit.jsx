@@ -1,12 +1,10 @@
 import React from "react";
 import ClothingItem from "../ItemComponents/ClothingItem";
-import useAppContext from "../../context/useAppContext";
 
-export default function Outfit() {
-  const { clothingItems } = useAppContext();
+export default function Outfit(clothingItems) {
   return (
     <>
-      <main className="grid min-w-full grid-cols-4 gap-12">
+      <main className="grid min-w-full grid-cols-4 gap-12 p-12 rounded-lg dark:bg-dark-foreground bg-foreground">
         {clothingItems &&
           clothingItems.map((clothingItem) => {
             return (
