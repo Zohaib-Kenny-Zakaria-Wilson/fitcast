@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<DailyOutfitPage />} />
         {/* Wardrobe Route */}
         <Route path="/wardrobe" element={<Wardrobe />} />
+        {/* Settings Route */}
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
