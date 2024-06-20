@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useAstro() {
-  const [forecastData, setforecastData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   const [error, setError] = useState(null);
   const [coords, setCoords] = useState(null);
 
@@ -20,7 +20,7 @@ export default function useAstro() {
         process.env.REACT_APP_API_KEY +
         "&q=" +
         coords;
-      setforecastData(null);
+      setForecastData(null);
       setError(null);
       try {
         await fetch(baseUrl, {
@@ -30,7 +30,7 @@ export default function useAstro() {
           },
         })
           .then((response) => response.json())
-          .then((data) => setforecastData(data))
+          .then((data) => setForecastData(data))
           .catch((err) => console.error(err));
       } catch (e) {
         setError(e);
