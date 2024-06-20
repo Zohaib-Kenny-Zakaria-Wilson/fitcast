@@ -40,6 +40,21 @@ function Wthr() {
     setWthrConditions,
   ]);
 
+  /**
+   * Refreshes the data in the context.
+   * @returns {void}
+   */
+  function refreshData() {
+    if (forecastData && currentData) {
+      setGlobalCurrentData(currentData);
+      setGlobalForecastData(forecastData.forecast.forecastday[0]);
+      const wthrConditions = getWthrConditions(
+        forecastData.forecast.forecastday[0].day
+      );
+      setWthrConditions(wthrConditions);
+    }
+  }
+
   return (
     <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
       <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
@@ -102,7 +117,7 @@ function Wthr() {
         </div>
 
         {/* Logo */}
-        <Logo />
+        <Logo onClick={refreshData} />
       </div>
     </div>
   );
