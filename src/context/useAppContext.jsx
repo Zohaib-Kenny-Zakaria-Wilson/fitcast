@@ -7,6 +7,11 @@ export default function useAppContext() {
 }
 
 export function AppProvider(props) {
+  //TODO: Create const for current weather and forecast.
+
+  
+  const [wthrConditions, setWthrConditions] = useState();
+
   const [clothingItems, setClothingItems] = useState([
     new clothingItem("1", "", "Red T-Shirt", "Red", "White", "shirt", "", true, false, false, true, false, true, false, true),
     new clothingItem("2", "", "Blue Polo", "Blue", "White", "shirt", "", true, false, false, true, false, true, false, true),
@@ -32,8 +37,6 @@ export function AppProvider(props) {
     new clothingItem("19", "", "Gray Running Shoes", "Gray", "Blue", "shoes", "", true, false, false, true, false, true, false, true),
     new clothingItem("20", "", "Red Heels", "Red", "Black", "shoes", "", true, false, false, true, false, true, false, true),
   ]);
-
-  const [wthrConditions, setWthrConditions] = useState();
 
   return (
     <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions }}>

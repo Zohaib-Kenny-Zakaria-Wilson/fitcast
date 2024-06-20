@@ -12,6 +12,7 @@ function Wthr() {
   const { forecastData } = useForecast();
   const { setWthrConditions } = useAppContext();
 
+  //TODO: Get the current and forecast weather conditions and set them in the context.
   useEffect(() => {
     if (forecastData) {
       const conditionData = forecastData.forecast.forecastday[0].day;
