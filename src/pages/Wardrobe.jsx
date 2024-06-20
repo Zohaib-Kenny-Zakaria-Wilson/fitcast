@@ -24,7 +24,7 @@ export default function Wardrobe() {
   // Filter clothing items
   const filteredClothingItems = clothingItems.filter((item) => {
     if (!filter) return true;
-    return item.category === filter;
+    return item.category === filter.toLowerCase() || item.category === filter;
   });
 
   // Sort clothing items
@@ -62,10 +62,10 @@ export default function Wardrobe() {
                   <option className="w-fit" value="">
                     Filter
                   </option>
-                  <option value="Shirt">Shirts</option>
-                  <option value="Pants">Pants</option>
-                  <option value="Shoes">Shoes</option>
-                  <option value="Accessories">Accessories</option>
+                  <option value="shirt">Shirts</option>
+                  <option value="pants">Pants</option>
+                  <option value="shoes">Shoes</option>
+                  <option value="accessories">Accessories</option>
                 </select>
               </div>
               {/* Sort Select */}
