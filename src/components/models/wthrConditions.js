@@ -8,7 +8,7 @@ export class wthrConditions {
      * @param {boolean} highRain if the rain is high
      * @param {boolean} lowRain if the rain is low
      * @param {boolean} highHumidity if the humidity is high
-     * @param {boolean} lowHumidity if the humidity is low
+     * @param {boolean} lowHumidity if the humidity is lo
      */
     constructor(hotWeather, coldWeather, highWind, lowWind, highRain, lowRain, highHumidity, lowHumidity) {
         this.hotWeather = hotWeather;

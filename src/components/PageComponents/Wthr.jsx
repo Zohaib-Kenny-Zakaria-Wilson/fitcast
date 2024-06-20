@@ -16,7 +16,6 @@ function Wthr() {
     if (forecastData) {
       const conditionData = forecastData.forecast.forecastday[0].day;
       const wthrConditions = getWthrConditions(conditionData);
-      console.log(wthrConditions);
       setWthrConditions(wthrConditions);
     }
   }, [forecastData, setWthrConditions]);
