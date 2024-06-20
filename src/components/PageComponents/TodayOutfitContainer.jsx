@@ -4,7 +4,7 @@ import Outfit from "../OutfitComponents/Outfit";
 
 export default function TodayOutfitContainer() {
   return (
-    <main className="flex flex-col w-full h-full gap-9">
+    <main className="flex flex-col w-full h-full overflow-y-auto gap-9 scrollbar-hide">
       {/* Header */}
       <div className="flex items-center justify-between w-full h-fit">
         {/* Title */}
@@ -27,6 +27,8 @@ export default function TodayOutfitContainer() {
       </div>
 
       <div className="flex flex-col p-12 rounded-lg gap-9 dark:bg-dark-foreground bg-foreground">
+        <Outfit />
+        <Outfit />
         <Outfit />
       </div>
     </main>
