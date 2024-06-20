@@ -8,6 +8,7 @@ export default function TodayOutfitContainer() {
   const [outfits, setOutfits] = useState([[], [], []]);
 
   //NOTICE: in the future I could use a loop and generate more outfits based on user preferences.
+  //TODO: Will have to create context for this in the future as every time the page is refreshed the outfits change.
   useEffect(() => {
     const newOutfits = [generateOutfit(), generateOutfit(), generateOutfit()];
     setOutfits(newOutfits);
