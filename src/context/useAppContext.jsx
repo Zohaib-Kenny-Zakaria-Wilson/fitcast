@@ -361,7 +361,7 @@ export function AppProvider(props) {
   ]);
 
   // Global state for outfits
-  const [outfits, setOutfits] = useState([]);
+  const [globalOutfits, setGlobalOutfits] = useState([]);
 
   return (
     <AppContext.Provider
@@ -374,8 +374,8 @@ export function AppProvider(props) {
         setGlobalCurrentData,
         globalForecastData,
         setGlobalForecastData,
-        outfits,
-        setOutfits,
+        globalOutfits,
+        setGlobalOutfits,
       }}
     >
       {props.children}
