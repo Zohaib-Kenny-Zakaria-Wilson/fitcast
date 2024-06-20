@@ -78,11 +78,11 @@ export function SearchBar() {
       </div>
       {/* Show the search results when the search bar is focused and there are items to show */}
       {isFocused && filteredItems.length > 0 && (
-        <div className="absolute z-50 w-full rounded-b-lg shadow-lg bg-foreground dark:bg-dark-foreground">
-          {filteredItems.map(item => (
-            <SearchItem key={item.id} clothingItem={item} />
-          ))}
-        </div>
+        <div className="absolute z-50 w-full py-1 shadow-lg rounded-b-md bg-foreground dark:bg-dark-foreground">
+        {filteredItems.map(item => (
+          <SearchItem key={item.id} clothingItem={item} />
+        ))}
+      </div>
       )}
     </div>
   );
