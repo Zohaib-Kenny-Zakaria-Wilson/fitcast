@@ -1,55 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import useAppContext from "../../context/useAppContext";
+import SearchItem from "./SearchItem";
 
 export function SearchBar() {
-  // State to manage the focus state of the input
-  const [isFocused, setIsFocused] = useState(false);
-  
-  // State to manage the input value so search bar doesn't lose focus when having text
-  const [inputValue, setInputValue] = useState('');
+  // Get the clothing items from the context to filter
+  const { clothingItems } = useAppContext();
 
-  // Function to handle the focus event and set the focus state to true
+  // State to manage the search bar
+  const [isFocused, setIsFocused] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [filteredItems, setFilteredItems] = useState([]);
+
   const handleFocus = () => setIsFocused(true);
 
-  // Function to handle the blur event and set the focus state to false when the input value is empty
-  const handleBlur = () => {
-    if (inputValue === '') {
+  // Handle blur event to close the search results when clicking outside the search bar
+  const handleBlur = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
       setIsFocused(false);
+      setInputValue('');
+      setFilteredItems([]);
     }
   };
 
-  // Function to handle the input change event and set the input value
-  const handleChange = (e) => setInputValue(e.target.value);
+  // Handle change event to update the input value and filter the items
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+    filterItems(e.target.value);
+  };
+
+  // Filter the items based on the search term
+  const filterItems = (searchTerm) => {
+    if (searchTerm === '') {
+      setFilteredItems([]);
+    } else {
+      const filtered = clothingItems.filter(item =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredItems(filtered);
+    }
+  };
+
+  // Clear the filtered items when the clothing items change
+  useEffect(() => {
+    setFilteredItems([]);
+  }, [clothingItems]);
 
   return (
-    <div className="relative flex items-center justify-end flex-1 w-full h-full transition-all duration-500">
-      <input
-        type="text"
-        placeholder="Search"
-        value={inputValue}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        // NOTICE: ChatGPT generated code
-        className={`h-full px-3 transition-all duration-500 outline-none rounded-md ${
-          isFocused || inputValue ? 'w-full bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw' : 'w-fit bg-transparent text-primary-tw'
-        }`}
-      />
-      <div className="absolute flex items-center h-full pointer-events-none right-3">
-        <svg
-          className="w-6 h-6 text-primary-tw dark:text-dark-primary-tw"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
-          />
-        </svg>
+    <div className="relative w-full" onBlur={handleBlur}>
+      <div className="flex items-center justify-end w-full h-full transition-all duration-500">
+        <input
+          type="text"
+          placeholder="Search"
+          value={inputValue}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          className={`h-12 px-4 transition-all duration-500 outline-none rounded-md ${
+            isFocused || inputValue ? 'w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw' : 'w-fit bg-transparent text-primary-tw'
+          }`}
+        />
+        <div className="absolute flex items-center h-full pointer-events-none right-3">
+          <svg
+            className="w-6 h-6 text-primary-tw dark:text-dark-primary-tw"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
+            />
+          </svg>
+        </div>
       </div>
+      {/* Show the search results when the search bar is focused and there are items to show */}
+      {isFocused && filteredItems.length > 0 && (
+        <div className="absolute z-50 w-full rounded-b-lg shadow-lg bg-foreground dark:bg-dark-foreground">
+          {filteredItems.map(item => (
+            <SearchItem key={item.id} clothingItem={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
