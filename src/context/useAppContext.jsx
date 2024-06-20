@@ -8,7 +8,8 @@ export default function useAppContext() {
 
 export function AppProvider(props) {
   //TODO: Create const for current weather and forecast.
-
+  const [currentData, setCurrentData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   
   const [wthrConditions, setWthrConditions] = useState();
 
@@ -39,7 +40,7 @@ export function AppProvider(props) {
   ]);
 
   return (
-    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions }}>
+    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions, currentData, setCurrentData, forecastData, setForecastData }}>
       {props.children}
     </AppContext.Provider>
   );
