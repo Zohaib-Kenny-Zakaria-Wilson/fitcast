@@ -18,9 +18,8 @@ function Wthr() {
     setGlobalForecastData,
   } = useAppContext();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // This effect will run when the forecastData and currentData are fetched
   useEffect(() => {
     if (!globalCurrentData && !globalForecastData) {
       if (forecastData && currentData) {
@@ -31,10 +30,10 @@ function Wthr() {
           forecastData.forecast.forecastday[0].day
         );
         setWthrConditions(wthrConditions);
-        setIsLoading(false);
+        setLoading(false);
       }
     } else {
-      setIsLoading(false);
+      setLoading(false);
     }
   }, [
     forecastData,
@@ -51,19 +50,19 @@ function Wthr() {
    * @returns {void}
    */
   function refreshData() {
+    setLoading(true);
     if (forecastData && currentData) {
-      setIsLoading(true);
       setGlobalCurrentData(currentData);
       setGlobalForecastData(forecastData.forecast.forecastday[0]);
       const wthrConditions = getWthrConditions(
         forecastData.forecast.forecastday[0].day
       );
       setWthrConditions(wthrConditions);
-      setIsLoading(false);
+      setLoading(false);
     }
   }
 
-  if (isLoading || isCurrentLoading || isForecastLoading) {
+  if (loading || isCurrentLoading || isForecastLoading) {
     return (
       <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
         <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
@@ -104,7 +103,7 @@ function Wthr() {
           <Logo onClick={refreshData} />
         </div>
       </div>
-    ); // Replace with your loading indicator
+    );
   }
 
   return (
@@ -167,6 +166,7 @@ function Wthr() {
             </div>
           )}
         </div>
+
         {/* Logo */}
         <Logo onClick={refreshData} />
       </div>
