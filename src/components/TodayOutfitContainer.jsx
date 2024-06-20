@@ -21,7 +21,6 @@ export default function TodayOutfitContainer() {
        
       <div className="flex flex-col p-12 rounded-lg gap-9 dark:bg-dark-foreground bg-foreground">
         <Outfit />
-       
       </div>
     </main>
   );
