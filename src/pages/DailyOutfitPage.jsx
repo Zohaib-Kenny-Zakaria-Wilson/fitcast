@@ -4,13 +4,14 @@ import TodayOutfitContainer from "../components/PageComponents/TodayOutfitContai
 import Wthr from "../components/PageComponents/Wthr";
 
 export default function DailyOutfitPage() {
-    return (
-        <main className={`w-screen flex gap-14 h-screen px-14 py-10 bg-background dark:bg-dark-background`}>
-            <Wthr />
-            { /* Right Side */}
-            <div className="flex flex-col w-full h-screen rounded-lg gap-9 bg-background dark:bg-dark-background">
-            <NavBar />
-            <TodayOutfitContainer />
-            </div>
-        </main> 
-    );}
+  return (
+    <main className="flex w-screen h-screen py-10 gap-14 px-14 bg-background dark:bg-dark-background">
+      <Wthr />
+      {/* Right Side */}
+      <div className="flex flex-col w-full h-full ml-auto overflow-y-auto rounded-lg gap-9 bg-background dark:bg-dark-background scrollbar-hide">
+        <NavBar />
+        <TodayOutfitContainer />
+      </div>
+    </main> 
+  );
+}
