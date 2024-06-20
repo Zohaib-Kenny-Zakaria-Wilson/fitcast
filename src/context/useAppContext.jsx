@@ -5,11 +5,11 @@ export default function useAppContext() {
   return useContext(AppContext);
 }
 export function AppProvider(props) {
-  const [clothingItems, setClothingItems] = useState([
-  ]);
+  const [clothingItems, setClothingItems] = useState([]);
+  const [wthrConditions, setWthrConditions] = useState();
 
   return (
-    <AppContext.Provider value={{ clothingItems, setClothingItems }}>
+    <AppContext.Provider value={{ clothingItems, setClothingItems, wthrConditions, setWthrConditions }}>
       {props.children}
     </AppContext.Provider>
   );

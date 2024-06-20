@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WeatherKeyInfo from "../WthrComponents/WthrStats";
 import { Logo } from "../misc/Logo";
 import useWeather from "../../hooks/useWeather";
 import useForecast from "../../hooks/useForecast";
 import { getWeatherIcon } from "../../utils/getWeatherIcon";
+import useAppContext from "../../context/useAppContext";
+import getWthrConditions from "../../utils/getWthrConditions.js";
 
 function Wthr() {
   const { data } = useWeather();
   const { forecastData } = useForecast();
+  const { setWthrConditions } = useAppContext();
 
+  useEffect(() => {
+    if (forecastData) {
+      const conditionData = forecastData.forecast.forecastday[0].day;
+      const wthrConditions = getWthrConditions(conditionData);
+      setWthrConditions(wthrConditions);
+    }
+  }, [forecastData, setWthrConditions]);
 
   return (
     <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
@@ -55,6 +65,7 @@ function Wthr() {
             </div>
           )}
         </div>
+        
         {/* Logo */}
         <Logo />
       </div>
