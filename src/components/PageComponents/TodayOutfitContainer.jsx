@@ -8,7 +8,6 @@ export default function TodayOutfitContainer() {
   const [outfits, setOutfits] = useState([[], [], []]);
 
   //NOTICE: in the future I could use a loop and generate more outfits based on user preferences.
-  //TODO: Will have to create context for this in the future as every time the page is refreshed the outfits change.
   useEffect(() => {
     const newOutfits = [generateOutfit(), generateOutfit(), generateOutfit()];
     setOutfits(newOutfits);
@@ -30,9 +29,10 @@ export default function TodayOutfitContainer() {
         {/* Buttons */}
         <div className="flex gap-4 max-h-fit">
           {/* Regenerate Button */}
-          <button 
+          <button
             onClick={regenerateOutfits}
-            className="px-4 py-2 rounded text-primary-tw dark:text-dark-primary-tw bg-component-border dark:bg-dark-component-border hover:bg-blue-700">
+            className="px-4 py-2 rounded text-primary-tw dark:text-dark-primary-tw bg-component-border dark:bg-dark-component-border hover:bg-blue-700"
+          >
             Regenerate
           </button>
           {/* Wardrobe Button */}

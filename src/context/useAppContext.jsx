@@ -15,6 +15,7 @@ export function AppProvider(props) {
   const [wthrConditions, setWthrConditions] = useState();
 
   // Global state for clothing items
+  //FUTURE: Might have to change the name to globalClothingItems
   const [clothingItems, setClothingItems] = useState([
     new clothingItem(
       "1",
