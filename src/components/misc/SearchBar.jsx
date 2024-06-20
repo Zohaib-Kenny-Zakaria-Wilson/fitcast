@@ -30,6 +30,7 @@ export function SearchBar() {
 
   // Filter the items based on the search term
   const filterItems = (searchTerm) => {
+    // NOTICE: The search is very basic as I has to use chatGPT, so in the future, we can improve this. 
     if (searchTerm === '') {
       setFilteredItems([]);
     } else {
