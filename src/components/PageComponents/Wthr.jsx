@@ -20,6 +20,7 @@ function Wthr() {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  // This effect will run when the forecastData and currentData are fetched
   useEffect(() => {
     if (!globalCurrentData && !globalForecastData) {
       if (forecastData && currentData) {
