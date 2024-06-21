@@ -15,7 +15,7 @@ export default function WthrContent({
         <div className="flex flex-col w-full gap-3 xl:gap-6 2xl:gap-9">
           <div className="flex flex-col items-center w-full gap-3 xl:gap-4 2xl:gap-6">
             <p className="text-xl font-medium text-center xl:text-2xl 2xl:text-4xl text-primary-tw dark:text-dark-primary-tw">
-              {loading ? "Loading..." : globalCurrentData?.locationa.name}
+              {loading ? "Loading..." : globalCurrentData?.location.name}
             </p>
             <img
               className="size-24 xl:size-36 2xl:size-48"
