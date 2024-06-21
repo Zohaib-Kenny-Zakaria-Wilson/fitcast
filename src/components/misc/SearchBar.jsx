@@ -55,7 +55,7 @@ export function SearchBar() {
           value={inputValue}
           onChange={handleChange}
           onFocus={handleFocus}
-          className={`h-12 px-4 transition-all duration-500 outline-none rounded-md ${
+          className={`h-12 px-4 transition-all duration-500 outline-none rounded-sm ${
             isFocused || inputValue
               ? "w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
               : "w-fit bg-transparent text-primary-tw"
