@@ -22,7 +22,7 @@ export function DarkModeButton() {
         </svg>
       ) : (
         <svg
-          className="w-8 h-8 text-primary-tw dark:text-dark-primary-tw"
+          className="w-8 h-8 text-primary-tw dark:text-dark-primary-tw duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
