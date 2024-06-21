@@ -39,7 +39,7 @@ export default function TodayOutfitContainer() {
           {/* Regenerate Button */}
           <button
             onClick={regenerateOutfits}
-            className="px-4 py-2 rounded text-primary-tw dark:text-dark-primary-tw bg-component-border dark:bg-dark-component-border hover:bg-blue-700"
+            className="px-4 py-2 rounded text-primary-tw dark:text-dark-primary-tw bg-component-border dark:bg-dark-component-border"
           >
             Regenerate
           </button>
@@ -51,7 +51,6 @@ export default function TodayOutfitContainer() {
           </Link>
         </div>
       </div>
-
 
       <div className="flex flex-col gap-9">
         {globalOutfits.map((outfit, index) => (
