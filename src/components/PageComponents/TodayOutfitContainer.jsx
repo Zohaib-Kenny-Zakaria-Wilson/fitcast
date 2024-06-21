@@ -39,13 +39,13 @@ export default function TodayOutfitContainer() {
           {/* Regenerate Button */}
           <button
             onClick={regenerateOutfits}
-            className="px-4 py-2 rounded text-primary-tw dark:text-dark-primary-tw bg-component-border dark:bg-dark-component-border"
+            className="py-2 px-4 bg-component-border rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
           >
             Regenerate
           </button>
           {/* Wardrobe Button */}
           <Link to="/wardrobe">
-            <button className="px-4 py-2 rounded text-primary-tw dark:text-dark-background bg-foreground dark:bg-dark-primary-tw">
+            <button className="px-4 py-2 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
               Wardrobe
             </button>
           </Link>

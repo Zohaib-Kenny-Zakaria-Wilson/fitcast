@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { ItemTagContainer } from "./ItemTagContainer";
-import ColorThief from 'colorthief';
-import chroma from 'chroma-js';
+import ColorThief from "colorthief";
+import chroma from "chroma-js";
 import useDarkMode from "../../hooks/useDarkMode";
-
 
 // Placeholder image for the image when no image is found
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 
-export default function ItemExpanded({
-  clothingItem,
-  onSubmit,
-  buttonText
-}) {
+export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
   // State to store the item being created/edited
   const [item, setItem] = useState(clothingItem);
   const [isDarkMode] = useDarkMode();
@@ -80,7 +75,7 @@ export default function ItemExpanded({
    */
   const extractDominantColor = (imageURL) => {
     const img = new Image();
-    img.crossOrigin = 'Anonymous';
+    img.crossOrigin = "Anonymous";
     img.src = imageURL;
     img.onload = () => {
       // Create a new ColorThief instance and extract the dominant color from the image
@@ -91,12 +86,15 @@ export default function ItemExpanded({
       const dominantChromaColor = chroma(dominantColor);
 
       // Determine the contrasting color based on the luminance of the dominant color
-      const contrastingColor = dominantChromaColor.luminance() > 0.5 ? dominantChromaColor.darken(3) : dominantChromaColor.brighten(3);
+      const contrastingColor =
+        dominantChromaColor.luminance() > 0.5
+          ? dominantChromaColor.darken(3)
+          : dominantChromaColor.brighten(3);
 
       // Set the item's dominant color and contrast color
       setItem((prevItem) => ({
         ...prevItem,
-        dominantColor: `rgb(${dominantColor.join(',')})`,
+        dominantColor: `rgb(${dominantColor.join(",")})`,
         contrastColor: contrastingColor.hex(),
       }));
     };
@@ -112,8 +110,12 @@ export default function ItemExpanded({
   };
 
   // NOTICE: The backgroundColor is set to the item's dominant color if it exists, otherwise it is set to the dark mode or light mode background color
-  const backgroundColor = item.dominantColor && item.dominantColor.trim() !== "" ? item.dominantColor : (isDarkMode ? "#272626" : "#F0F0F0");
-
+  const backgroundColor =
+    item.dominantColor && item.dominantColor.trim() !== ""
+      ? item.dominantColor
+      : isDarkMode
+      ? "#272626"
+      : "#F0F0F0";
 
   return (
     <main
@@ -121,31 +123,29 @@ export default function ItemExpanded({
       style={{ backgroundColor: backgroundColor }}
     >
       {/* Image Upload */}
-      <div 
-        className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-lg overflow-hidden" 
-        style={{ 
-          backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`, 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center' 
+      <div
+        className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-md overflow-hidden"
+        style={{
+          backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Image Overlay */}
-        <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-lg opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
-          <span className="px-6 py-2 text-base font-medium rounded-lg bg-primary-tw dark:bg-primary-tw-dark text-background">Add a file</span>
+        <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-md opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
+          <span className="px-6 py-2 text-base font-medium rounded-sm bg-background dark:bg-primary-tw-dark text-primary-tw">
+            Add a file
+          </span>
           {/* Image Input */}
-          <input
-            type="file"
-            className="hidden"
-            onChange={handleFileChange}
-          />
+          <input type="file" className="hidden" onChange={handleFileChange} />
         </label>
       </div>
       {/* Form */}
       <form
-        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-lg lg:w-1/2 bg-foreground dark:bg-dark-foreground"
+        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-md lg:w-1/2 bg-foreground dark:bg-dark-foreground"
         onSubmit={handleSubmit}
       >
-        { /* Top Selection */}
+        {/* Top Selection */}
         <div className="w-full">
           {/* Item Name */}
           <input
@@ -155,7 +155,7 @@ export default function ItemExpanded({
             className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground dark:bg-dark-foreground focus:outline-none dark:text-dark-primary-tw text-primary-tw"
             style={{ color: item.textColor }}
           />
-          { /* Category Selection */}
+          {/* Category Selection */}
           <select
             className="flex w-1/2 p-0 text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
             value={item.category}
@@ -176,7 +176,7 @@ export default function ItemExpanded({
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-3 rounded-md bg-primary-tw dark:bg-dark-primary-tw text-background dark:text-dark-background"
+          className="w-full py-3 rounded-sm bg-primary-tw dark:bg-dark-primary-tw text-background dark:text-dark-background"
         >
           <p>{buttonText}</p>
         </button>
