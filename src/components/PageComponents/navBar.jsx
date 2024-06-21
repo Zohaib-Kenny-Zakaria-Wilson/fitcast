@@ -13,7 +13,7 @@ export default function NavBar() {
     <main className="flex items-center justify-end w-full gap-4 max-h-fit">
       <Link
         to="/daily"
-        className="transition-transform duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+        className="transition-transform p-1 duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
       >
         <LogoIcon />
       </Link>
