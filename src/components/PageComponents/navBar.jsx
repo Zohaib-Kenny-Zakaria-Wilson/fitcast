@@ -13,7 +13,7 @@ export default function NavBar() {
     <main className="flex items-center justify-end w-full gap-8 max-h-fit">
       <Link
         to="/daily"
-        className="transition-transform p-1 pt-0 pb-2 duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+        className="transition-transform my-1 ml-1 duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
       >
         <LogoIcon />
       </Link>
@@ -24,7 +24,7 @@ export default function NavBar() {
       {/* Profile */}
       <Link
         to="/settings"
-        className="rounded-full size-12 bg-primary-tw"
+        className="transition-transform my-1 mr-1 box-border duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px] rounded-sm"
         style={{
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "/assets/base-profile.jpeg"
