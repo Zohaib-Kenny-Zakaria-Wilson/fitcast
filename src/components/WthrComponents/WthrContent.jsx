@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../misc/Logo.jsx";
+import { WthrLogo } from "./WthrLogo.jsx";
 import CurrentWthrContent from "./CurrentWthrContent.jsx";
 import ForecastWthrContent from "./ForecastWthrContent.jsx";
 
@@ -20,7 +20,7 @@ export default function WthrContent({
           loading={loading}
           globalForecastData={globalForecastData}
         />
-        <Logo onClick={refreshData} />
+        <WthrLogo onClick={refreshData} />
       </div>
     </div>
   );
