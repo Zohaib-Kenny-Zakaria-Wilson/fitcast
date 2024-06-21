@@ -57,7 +57,7 @@ export default function Wardrobe() {
                 <select
                   value={filter}
                   onChange={handleFilterChange}
-                  className="h-full px-4 py-2 rounded-md select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                  className="h-full px-4 py-2 rounded-sm select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
                 >
                   <option className="w-fit" value="">
                     Filter
@@ -73,7 +73,7 @@ export default function Wardrobe() {
                 <select
                   value={sort}
                   onChange={handleSortChange}
-                  className="h-full px-4 py-2 rounded-md select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                  className="h-full px-4 py-2 rounded-sm select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
                 >
                   <option value="">Sort</option>
                   <option value="nameAsc">Name (A-Z)</option>
@@ -87,7 +87,7 @@ export default function Wardrobe() {
               <AddItem />
               {/* Today's Outfit Button */}
               <Link className="h-full" to="/daily">
-                <button className="px-4 py-2 rounded text-primary-tw dark:text-dark-background bg-foreground dark:bg-dark-primary-tw">
+                <button className="px-4 py-2 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
                   Today's Outfit
                 </button>
               </Link>
