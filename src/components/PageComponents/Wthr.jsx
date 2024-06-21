@@ -64,7 +64,7 @@ function Wthr() {
 
   if (loading || isCurrentLoading || isForecastLoading) {
     return (
-      <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
+      <div className="grid h-full border-b-4 rounded-md bg-foreground dark:bg-dark-foreground min-w-fit border-component-border dark:border-dark-component-border">
         <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
           <div className="flex flex-col w-full gap-3 xl:gap-6 2xl:gap-9">
             <div className="flex flex-col items-center w-full gap-3 xl:gap-4 2xl:gap-6">
@@ -107,7 +107,7 @@ function Wthr() {
   }
 
   return (
-    <div className="grid h-full border-b-4 bg-foreground dark:bg-dark-foreground min-w-fit rounded-xl border-component-border dark:border-dark-component-border">
+    <div className="grid h-full border-b-2 rounded-md bg-foreground dark:bg-dark-foreground min-w-fit border-component-border dark:border-dark-component-border">
       <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
         <div className="flex flex-col w-full gap-3 xl:gap-6 2xl:gap-9">
           <div className="flex flex-col items-center w-full gap-3 xl:gap-4 2xl:gap-6">
