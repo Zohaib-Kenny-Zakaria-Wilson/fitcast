@@ -31,8 +31,9 @@ export default function WthrContainer() {
         // Set current and forecast data in the context
         setGlobalCurrentData(currentData);
         setGlobalForecastData(dailyForecastData);
-        const wthrConditions = getWthrConditions(dailyForecastData);
+        const wthrConditions = getWthrConditions(dailyForecastData.day);
         setWthrConditions(wthrConditions);
+        console.log(wthrConditions);
         setLoading(false);
       }
     } else {
@@ -61,7 +62,7 @@ export default function WthrContainer() {
       // Set the global data in the context
       setGlobalCurrentData(currentData);
       setGlobalForecastData(dailyForecastData);
-      const wthrConditions = getWthrConditions(dailyForecastData);
+      const wthrConditions = getWthrConditions(dailyForecastData.day);
       setWthrConditions(wthrConditions);
       setLoading(false);
     }
