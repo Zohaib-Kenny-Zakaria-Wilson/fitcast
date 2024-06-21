@@ -86,7 +86,7 @@ export default function Wardrobe() {
               {/* Add Item Button */}
               <AddItem />
               {/* Today's Outfit Button */}
-              <Link className="h-full" to="/">
+              <Link className="h-full" to="/daily">
                 <button className="px-4 py-2 rounded text-primary-tw dark:text-dark-background bg-foreground dark:bg-dark-primary-tw">
                   Today's Outfit
                 </button>

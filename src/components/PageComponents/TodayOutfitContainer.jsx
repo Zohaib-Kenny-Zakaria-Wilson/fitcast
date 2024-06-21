@@ -52,6 +52,7 @@ export default function TodayOutfitContainer() {
         </div>
       </div>
 
+
       <div className="flex flex-col gap-9">
         {globalOutfits.map((outfit, index) => (
           <Outfit key={index} clothingItems={outfit} />
