@@ -133,7 +133,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
       >
         {/* Image Overlay */}
         <label className="absolute inset-0 flex items-center justify-center p-3 text-white bg-black bg-opacity-50 rounded-md opacity-0 cursor-pointer hover:opacity-100 hover:backdrop-blur-sm">
-          <span className="px-6 py-2 text-base font-medium rounded-md bg-primary-tw dark:bg-primary-tw-dark text-background">
+          <span className="px-6 py-2 text-base font-medium rounded-sm bg-background dark:bg-primary-tw-dark text-primary-tw">
             Add a file
           </span>
           {/* Image Input */}
