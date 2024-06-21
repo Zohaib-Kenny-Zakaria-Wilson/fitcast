@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Logo({ onClick }) {
+export function WthrLogo({ onClick }) {
   return (
     <div onClick={onClick}>
       <svg
