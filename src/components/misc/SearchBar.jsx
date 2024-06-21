@@ -47,7 +47,7 @@ export function SearchBar() {
   }, [clothingItems]);
 
   return (
-    <div className="relative max-w-full" onBlur={handleBlur}>
+    <div className="relative flex-grow" onBlur={handleBlur}>
       <div className="flex items-center justify-end w-full h-full transition-all duration-500">
         <input
           type="text"
