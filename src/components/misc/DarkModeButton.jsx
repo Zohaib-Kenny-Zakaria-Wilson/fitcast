@@ -1,11 +1,14 @@
-import React from 'react';
-import useDarkMode from '../../hooks/useDarkMode';
+import React from "react";
+import useDarkMode from "../../hooks/useDarkMode";
 
 export function DarkModeButton() {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
 
   return (
-    <button onClick={toggleDarkMode} className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-full">
+    <button
+      onClick={toggleDarkMode}
+      className="flex items-center justify-center rounded-full size-12"
+    >
       {isDarkMode ? (
         <svg
           className="w-8 h-8 text-primary-tw dark:text-dark-primary-tw"
