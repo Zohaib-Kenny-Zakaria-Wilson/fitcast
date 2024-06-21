@@ -5,7 +5,7 @@ import useDarkMode from "../../hooks/useDarkMode";
 import { Link } from "react-router-dom";
 import LogoIcon from "../misc/LogoIcon";
 
-export default function NavBar() {
+export default function NavBarWardrobe() {
   // State for toggling dark mode
   const [, toggleDarkMode] = useDarkMode();
 
