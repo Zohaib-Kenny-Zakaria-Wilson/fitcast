@@ -48,12 +48,15 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
         }));
         const compressedImageURL = await compressImage(imageURL);
         const bgRemovedImageURL = await removeBackground(compressedImageURL);
-        await extractDominantColor(bgRemovedImageURL, setItem);
+        await extractDominantColor(bgRemovedImageURL);
+        setItem((prevItem) => ({
+          ...prevItem,
+          imageURL: bgRemovedImageURL,
+        }));
       };
       reader.readAsDataURL(file);
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(item);
