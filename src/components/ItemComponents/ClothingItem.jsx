@@ -10,7 +10,7 @@ export default function ClothingItem({ clothingItem }) {
   // State to toggle the modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Used to update the clothing items in the context
-  const { setClothingItems } = useAppContext();
+  const { setClothingItems, updateClothingItemsInOutfits } = useAppContext();
 
   /**
    * Opens the modal
@@ -21,9 +21,9 @@ export default function ClothingItem({ clothingItem }) {
     setIsModalOpen(true);
   };
 
-    /**
+  /**
    * Closes the modal
-   * 
+   *
    * @returns {void}
    */
   const closeModal = () => {
@@ -33,7 +33,7 @@ export default function ClothingItem({ clothingItem }) {
   /**
    * Edits the item in the wardrobe and updates the context
    * @param {clothingItem} newClothingItem The new clothing item to replace the old one
-   * 
+   *
    * @returns {void}
    */
   const editItem = (updatedItem) => {
@@ -43,6 +43,9 @@ export default function ClothingItem({ clothingItem }) {
         item.id === clothingItem.id ? updatedItem : item
       )
     );
+
+    // Update the clothing items in the outfits
+    updateClothingItemsInOutfits(updatedItem);
     // Close the modal
     closeModal();
   };
@@ -58,7 +61,11 @@ export default function ClothingItem({ clothingItem }) {
             onSubmit={editItem}
             buttonText="Save Changes"
           />
-          <button type="button" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
+          <button
+            type="button"
+            onClick={closeModal}
+            className="modal-backdrop backdrop-blur-sm"
+          >
             Close
           </button>
         </dialog>

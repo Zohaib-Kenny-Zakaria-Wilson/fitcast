@@ -46,6 +46,14 @@ export function AppProvider(props) {
     saveClothingItems();
   }, [clothingItems]);
 
+  const updateClothingItemsInOutfits = (updatedItem) => {
+    setGlobalOutfits((prevOutfits) =>
+      prevOutfits.map((outfit) =>
+        outfit.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+      )
+    );
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -59,6 +67,7 @@ export function AppProvider(props) {
         setGlobalForecastData,
         globalOutfits,
         setGlobalOutfits,
+        updateClothingItemsInOutfits,
       }}
     >
       {props.children}

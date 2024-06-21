@@ -4,8 +4,6 @@ import ColorThief from "colorthief";
 import chroma from "chroma-js";
 import useDarkMode from "../../hooks/useDarkMode";
 
-//BUG: When Item is saved, it should show on outfit as well. Currently it is not updating the change until regenerated. Basically there should be a refresh when any change is made to a clothingItem.
-
 // Placeholder image for the image when no image is found
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 
