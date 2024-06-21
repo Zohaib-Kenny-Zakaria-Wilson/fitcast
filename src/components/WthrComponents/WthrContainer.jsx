@@ -18,11 +18,14 @@ export default function WthrContainer() {
 
   const [loading, setLoading] = useState(true);
 
+  /**
+   * Sets the global data in the context on the first render.
+   * @returns {void}
+   */
   useEffect(() => {
-    // If the global data is not set, set it
     if (!globalCurrentData && !globalForecastData) {
-      // If the data is available set it
       if (forecastData && currentData) {
+        // Get the daily forecast data
         const dailyForecastData = forecastData.forecast.forecastday[0];
 
         // Set current and forecast data in the context
@@ -52,11 +55,13 @@ export default function WthrContainer() {
   function refreshData() {
     setLoading(true);
     if (forecastData && currentData) {
+      // Get the daily forecast data
+      const dailyForecastData = forecastData.forecast.forecastday[0];
+
+      // Set the global data in the context
       setGlobalCurrentData(currentData);
-      setGlobalForecastData(forecastData.forecast.forecastday[0]);
-      const wthrConditions = getWthrConditions(
-        forecastData.forecast.forecastday[0].day
-      );
+      setGlobalForecastData(dailyForecastData);
+      const wthrConditions = getWthrConditions(dailyForecastData);
       setWthrConditions(wthrConditions);
       setLoading(false);
     }
