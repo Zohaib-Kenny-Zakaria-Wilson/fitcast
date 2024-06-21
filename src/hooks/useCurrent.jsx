@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function useWeather() {
-  const [data, setData] = useState(null);
+export default function useCurrent() {
+  const [currentData, setCurrentData] = useState(null);
   const [error, setError] = useState(null);
   const [coords, setCoords] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     async function init() {
       let coordsVar;
@@ -19,7 +21,7 @@ export default function useWeather() {
         process.env.REACT_APP_API_KEY +
         "&q=" +
         coords;
-      setData(null);
+      setCurrentData(null);
       setError(null);
       try {
         await fetch(baseUrl, {
@@ -29,14 +31,21 @@ export default function useWeather() {
           },
         })
           .then((response) => response.json())
-          .then((data) => setData(data))
-          .catch((err) => console.error(err));
+          .then((data) => {
+            setCurrentData(data);
+            setIsLoading(false); // Set loading to false after data is fetched
+          })
+          .catch((err) => {
+            console.error(err);
+            setIsLoading(false); // Set loading to false in case of an error
+          });
       } catch (e) {
         setError(e);
+        setIsLoading(false); // Set loading to false in case of an error
       }
     }
     init();
   }, [coords]);
 
-  return { data, error };
+  return { currentData, error, isLoading };
 }

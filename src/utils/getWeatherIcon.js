@@ -57,15 +57,10 @@ export const weatherIcons = {
  */
 export function getWeatherIcon(conditionCode, is_day) {
     const condition = weatherIcons[conditionCode];
-    console.log("Condition code:", conditionCode)
     if (!condition) {
-        console.log("Condition code not found:", conditionCode);
         return "assets/not-available.svg"; // Default icon if condition code is not found
     }
-    console.log("Condition:", condition);
-
     const iconPath = is_day === 1 ? condition.day : condition.night;
-    console.log("Icon path:", iconPath);
 
     return iconPath;
 }

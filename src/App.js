@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Wardrobe from "./pages/Wardrobe";
 import DailyOutfitPage from "./pages/DailyOutfitPage";
 import Main from "./pages/Main";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/daily" element={<DailyOutfitPage />} />
         {/* Wardrobe Route */}
         <Route path="/wardrobe" element={<Wardrobe />} />
+        {/* Settings Route */}
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );
