@@ -15,8 +15,12 @@ function Main() {
         <h1 className="text-5xl font-bold text-gray-950"> Get Started With </h1>
         <Logo />
         <div className="flex flex-row justify-between gap-x-3 gap-y-2">
-          <Link className="btn btn-large">Log in</Link>
-          <Link className="btn btn-large">Sign up</Link>
+          <Link to={"/daily"} className="btn btn-large">
+            Log in
+          </Link>
+          <Link to={"/daily"} className="btn btn-large">
+            Sign up
+          </Link>
         </div>
       </div>
     </main>
