@@ -3,7 +3,7 @@ import useAppContext from "../context/useAppContext";
 import ClothingItem from "../components/ItemComponents/ClothingItem";
 import AddItem from "../components/ItemComponents/AddItem";
 import { Link } from "react-router-dom";
-import NavBar from "../components/PageComponents/navBar";
+import NavBarWardrobe from "../components/PageComponents/NavBarWardrobe";
 
 export default function Wardrobe() {
   // Get clothing items from context and set filter and sort states
@@ -40,7 +40,7 @@ export default function Wardrobe() {
   return (
     <>
       <div className="flex flex-col w-full min-h-screen py-10 rounded-lg px-14 gap-9 dark:bg-dark-background bg-background">
-        <NavBar />
+        <NavBarWardrobe />
         {/* Wardrobe Container */}
         <main className="flex flex-col w-full gap-8">
           {/* Wardrobe Header */}
