@@ -8,7 +8,7 @@ export function SearchBar() {
 
   // State to manage the search bar
   const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
 
   const handleFocus = () => setIsFocused(true);
@@ -17,7 +17,7 @@ export function SearchBar() {
   const handleBlur = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
       setIsFocused(false);
-      setInputValue('');
+      setInputValue("");
       setFilteredItems([]);
     }
   };
@@ -30,11 +30,11 @@ export function SearchBar() {
 
   // Filter the items based on the search term
   const filterItems = (searchTerm) => {
-    // NOTICE: The search is very basic as I has to use chatGPT, so in the future, we can improve this. 
-    if (searchTerm === '') {
+    // NOTICE: The search is very basic as I has to use chatGPT, so in the future, we can improve this.
+    if (searchTerm === "") {
       setFilteredItems([]);
     } else {
-      const filtered = clothingItems.filter(item =>
+      const filtered = clothingItems.filter((item) =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredItems(filtered);
@@ -47,7 +47,7 @@ export function SearchBar() {
   }, [clothingItems]);
 
   return (
-    <div className="relative w-full" onBlur={handleBlur}>
+    <div className="relative max-w-full" onBlur={handleBlur}>
       <div className="flex items-center justify-end w-full h-full transition-all duration-500">
         <input
           type="text"
@@ -56,7 +56,9 @@ export function SearchBar() {
           onChange={handleChange}
           onFocus={handleFocus}
           className={`h-12 px-4 transition-all duration-500 outline-none rounded-md ${
-            isFocused || inputValue ? 'w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw' : 'w-fit bg-transparent text-primary-tw'
+            isFocused || inputValue
+              ? "w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+              : "w-fit bg-transparent text-primary-tw"
           }`}
         />
         <div className="absolute flex items-center h-full pointer-events-none right-3">
@@ -79,10 +81,10 @@ export function SearchBar() {
       {/* Show the search results when the search bar is focused and there are items to show */}
       {isFocused && filteredItems.length > 0 && (
         <div className="absolute z-50 w-full py-1 shadow-lg rounded-b-md bg-foreground dark:bg-dark-foreground">
-        {filteredItems.map(item => (
-          <SearchItem key={item.id} clothingItem={item} />
-        ))}
-      </div>
+          {filteredItems.map((item) => (
+            <SearchItem key={item.id} clothingItem={item} />
+          ))}
+        </div>
       )}
     </div>
   );
