@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import { Logo } from "../components/misc/Logo";
 function Main() {
   return (
-    <main className="flex bg-gray-950 md:flex-row lg:flex-row flex-col-reverse h-screen ">
-      <div></div>
-      <div className="flex flex-col justify-center px-5 pt-8 bg-background">
+    <main className="flex dark:bg-dark-background bg-background md:flex-row lg:flex-row flex-col-reverse h-screen ">
+      <div className="flex flex-col justify-center pl-12">
         <img
           alt="pci"
           width="90%"
