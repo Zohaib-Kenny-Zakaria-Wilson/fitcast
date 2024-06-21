@@ -39,7 +39,7 @@ export default function Wardrobe() {
 
   return (
     <>
-      <div className="flex flex-col w-full h-screen py-10 rounded-lg px-14 gap-9 dark:bg-dark-background bg-background">
+      <div className="flex flex-col w-full min-h-screen py-10 rounded-lg px-14 gap-9 dark:bg-dark-background bg-background">
         <NavBar />
         {/* Wardrobe Container */}
         <main className="flex flex-col w-full gap-8">
@@ -95,7 +95,7 @@ export default function Wardrobe() {
           </div>
           {/* Render Clothing Items or Empty Message */}
           {sortedClothingItems && sortedClothingItems.length > 0 ? (
-            <div className="grid w-full grid-cols-6 gap-12 p-10 rounded-md bg-foreground dark:bg-dark-foreground">
+            <div className="grid w-full grid-cols-6 gap-12 p-10 border-b-4 rounded-md bg-foreground dark:bg-dark-foreground border-component-border dark:border-dark-component-border">
               {sortedClothingItems.map((clothingItem) => (
                 <ClothingItem
                   key={clothingItem.id}
