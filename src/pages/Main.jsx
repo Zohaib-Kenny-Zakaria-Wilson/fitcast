@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Logo } from "../components/misc/Logo";
-import react from "../components/images/demo2.png";
 function Main() {
   return (
     <main className="flex bg-gray-950 md:flex-row lg:flex-row flex-col-reverse h-screen ">
