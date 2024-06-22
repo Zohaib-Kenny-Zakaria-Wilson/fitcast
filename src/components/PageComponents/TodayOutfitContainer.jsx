@@ -30,26 +30,26 @@ export default function TodayOutfitContainer() {
   };
 
   return (
-    <main className="flex flex-col w-full h-full overflow-y-auto gap-9 scrollbar-hide">
+    <main className="flex flex-col w-full h-full overflow-y-auto gap-7 xl:gap-8 2xl:gap-9 scrollbar-hide">
       <div className="flex items-center justify-between w-full h-fit">
-        <p className="text-3xl font-medium text-primary-tw dark:text-dark-primary-tw">
+        <p className="text-2xl font-medium text-primary-tw dark:text-dark-primary-tw">
           Today's Outfits
         </p>
-        <div className="flex gap-4 max-h-fit">
+        <div className="flex gap-4">
           <button
             onClick={regenerateOutfits}
-            className="py-2 px-4 bg-component-border rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
+            className="py-1 px-4 min-h-full bg-component-border rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
           >
             Regenerate
           </button>
           <Link to="/wardrobe">
-            <button className="px-4 py-2 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
+            <button className="py-1 px-4 min-h-full rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
               Wardrobe
             </button>
           </Link>
         </div>
       </div>
-      <div className="flex flex-col gap-9">
+      <div className="flex flex-col gap-7 2xl:gap-9">
         {globalOutfits &&
           globalOutfits.map((outfit, index) => (
             <Outfit key={index} clothingItems={outfit} />

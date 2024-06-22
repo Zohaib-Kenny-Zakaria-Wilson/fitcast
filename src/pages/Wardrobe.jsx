@@ -46,9 +46,9 @@ export default function Wardrobe() {
           {/* Wardrobe Header */}
           <div className="flex justify-between w-full">
             {/* Wardrobe Header Left */}
-            <div className="flex items-start gap-6 w-fit">
+            <div className="flex items-center gap-6 w-fit">
               {/* Wardrobe Title */}
-              <p className="text-3xl font-medium text-primary-tw dark:text-dark-primary-tw">
+              <p className="text-2xl font-medium text-primary-tw dark:text-dark-primary-tw">
                 Wardrobe
               </p>
               {/* Filter and Sort Selects */}
@@ -57,7 +57,7 @@ export default function Wardrobe() {
                 <select
                   value={filter}
                   onChange={handleFilterChange}
-                  className="h-full px-4 py-2 rounded-sm select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                  className="h-full px-4 py-1 rounded-sm select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
                 >
                   <option className="w-fit" value="">
                     Filter
@@ -73,7 +73,7 @@ export default function Wardrobe() {
                 <select
                   value={sort}
                   onChange={handleSortChange}
-                  className="h-full px-4 py-2 rounded-sm select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
+                  className="h-full px-4 py-1 rounded-sm select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
                 >
                   <option value="">Sort</option>
                   <option value="nameAsc">Name (A-Z)</option>
@@ -87,7 +87,7 @@ export default function Wardrobe() {
               <AddItem />
               {/* Today's Outfit Button */}
               <Link className="h-full" to="/daily">
-                <button className="px-4 py-2 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
+                <button className="px-4 py-1 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
                   Today's Outfit
                 </button>
               </Link>
@@ -95,7 +95,7 @@ export default function Wardrobe() {
           </div>
           {/* Render Clothing Items or Empty Message */}
           {sortedClothingItems && sortedClothingItems.length > 0 ? (
-            <div className="grid w-full grid-cols-6 gap-12 p-10 border-b-4 rounded-md bg-foreground dark:bg-dark-foreground border-component-border dark:border-dark-component-border">
+            <div className="grid w-full grid-cols-4 gap-12 p-10 border-b-4 rounded-md xl:grid-cols-5 2xl:grid-cols-6 bg-foreground dark:bg-dark-foreground border-component-border dark:border-dark-component-border">
               {sortedClothingItems.map((clothingItem) => (
                 <ClothingItem
                   key={clothingItem.id}
