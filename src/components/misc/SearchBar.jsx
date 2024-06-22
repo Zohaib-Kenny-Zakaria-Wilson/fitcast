@@ -55,7 +55,7 @@ export function SearchBar() {
           value={inputValue}
           onChange={handleChange}
           onFocus={handleFocus}
-          className={`h-12 px-4 transition-all duration-500 hover:w-full hover:dark:bg-dark-foreground hover:bg-foreground outline-none rounded-sm ${
+          className={`h-10 xl:h-11 2xl:h-12 text-sm xl:text-base px-4 transition-all duration-500 hover:w-full hover:dark:bg-dark-foreground hover:bg-foreground outline-none rounded-sm ${
             isFocused || inputValue
               ? "w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
               : "w-fit bg-transparent text-primary-tw"
@@ -63,7 +63,7 @@ export function SearchBar() {
         />
         <div className="absolute flex items-center h-full pointer-events-none right-3">
           <svg
-            className="w-6 h-6 text-primary-tw dark:text-dark-primary-tw"
+            className="size-5 2xl:size-6 text-primary-tw dark:text-dark-primary-tw"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
