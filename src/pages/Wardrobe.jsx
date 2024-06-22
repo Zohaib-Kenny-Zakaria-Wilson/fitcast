@@ -95,7 +95,7 @@ export default function Wardrobe() {
           </div>
           {/* Render Clothing Items or Empty Message */}
           {sortedClothingItems && sortedClothingItems.length > 0 ? (
-            <div className="grid w-full grid-cols-4 gap-12 p-10 border-b-4 rounded-md xl:grid-cols-5 2xl:grid-cols-6 bg-foreground dark:bg-dark-foreground border-component-border dark:border-dark-component-border">
+            <div className="grid w-full grid-cols-4 gap-6 p-10 border-b-4 rounded-md xl:grid-cols-5 2xl:grid-cols-6 bg-foreground dark:bg-dark-foreground border-component-border dark:border-dark-component-border">
               {sortedClothingItems.map((clothingItem) => (
                 <ClothingItem
                   key={clothingItem.id}
