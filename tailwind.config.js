@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       borderRadius: {
-        sm: "8px",
-        md: "16px",
+        sm: "5px",
+        md: "10px",
       },
     },
     colors: {
