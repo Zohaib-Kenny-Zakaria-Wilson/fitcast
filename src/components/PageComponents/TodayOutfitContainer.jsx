@@ -49,7 +49,7 @@ export default function TodayOutfitContainer() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col gap-9">
+      <div className="flex flex-col gap-7 2xl:gap-9">
         {globalOutfits &&
           globalOutfits.map((outfit, index) => (
             <Outfit key={index} clothingItems={outfit} />
