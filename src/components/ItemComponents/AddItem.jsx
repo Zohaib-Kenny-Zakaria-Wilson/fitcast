@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import ItemExpanded from "./ItemExpanded";
 import Button from "../misc/Button";
 import useAppContext from "../../context/useAppContext";
-import { clothingItem } from "../models/clothingItem";
-
+import { clothingItem } from "../../models/clothingItem";
 
 export default function AddItem() {
-    // State to toggle the modal
+  // State to toggle the modal
   const [isModalOpen, setIsModalOpen] = useState(false);
-    // Used to update the clothing items in the context\
+  // Used to update the clothing items in the context\
   const { clothingItems, setClothingItems } = useAppContext();
 
   /**
@@ -22,7 +21,7 @@ export default function AddItem() {
 
   /**
    * Closes the modal
-   * 
+   *
    * @returns {void}
    */
   const closeModal = () => {
@@ -30,12 +29,14 @@ export default function AddItem() {
   };
 
   const getNextId = () => {
-    const ids = clothingItems.map(item => parseInt(item.id, 10)).filter(id => !isNaN(id));
+    const ids = clothingItems
+      .map((item) => parseInt(item.id, 10))
+      .filter((id) => !isNaN(id));
     return ids.length ? Math.max(...ids) + 1 : 1;
   };
 
   const addItem = (newItem) => {
-    newItem.id = getNextId().toString();  // Ensure the ID is a string
+    newItem.id = getNextId().toString(); // Ensure the ID is a string
     setClothingItems((curr) => [newItem, ...curr]);
     closeModal();
   };
@@ -48,7 +49,25 @@ export default function AddItem() {
       {isModalOpen && (
         <dialog open className="modal">
           <ItemExpanded
-            clothingItem={new clothingItem("", "", "", "", "", "", "", false, false, false, false, false, false, false, false)}
+            clothingItem={
+              new clothingItem(
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              )
+            }
             onSubmit={addItem}
             buttonText={"Add Item"}
           />
