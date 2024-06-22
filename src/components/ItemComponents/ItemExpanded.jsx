@@ -119,7 +119,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
         <button
           type="submit"
-          className="w-full py-3 rounded-sm bg-primary-tw dark:bg-dark-primary-tw text-background dark:text-dark-background"
+          className="w-full py-3 transition-all duration-150 border-b-2 rounded-sm bg-primary-tw dark:bg-dark-primary-tw border-dark-primary-tw dark:border-foreground hover:dark:border-transparent hover:border-transparent hover:translate-y-0.5 text-background dark:text-dark-background"
         >
           <p>{buttonText}</p>
         </button>
