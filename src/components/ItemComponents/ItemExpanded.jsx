@@ -44,19 +44,19 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
         const imageURL = upload.target.result;
         setItem((prevItem) => ({
           ...prevItem,
-          imageURL,
+          imageURL: imageURL,
         }));
+        setLoading(true);
         const compressedImageURL = await compressImage(imageURL);
         const bgRemovedImageURL = await removeBackground(compressedImageURL);
-        await extractDominantColor(bgRemovedImageURL);
-        setItem((prevItem) => ({
-          ...prevItem,
-          imageURL: bgRemovedImageURL,
-        }));
+        await extractDominantColor(bgRemovedImageURL, setItem);
+
+        setLoading(false);
       };
       reader.readAsDataURL(file);
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(item);

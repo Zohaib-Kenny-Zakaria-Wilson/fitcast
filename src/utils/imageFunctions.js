@@ -35,8 +35,8 @@ export const removeBackground = async (imageURL) => {
     });
 
     const segmentation = await net.segmentPerson(img, {
-      internalResolution: "high",
-      segmentationThreshold: 0.7,
+      internalResolution: "medium",
+      segmentationThreshold: 0.5, // Use a more lenient threshold
     });
 
     const canvas = document.createElement("canvas");
@@ -47,10 +47,11 @@ export const removeBackground = async (imageURL) => {
     ctx.drawImage(img, 0, 0, img.width, img.height);
     const imageData = ctx.getImageData(0, 0, img.width, img.height);
 
+    // Use the segmentation mask to remove the background
     for (let i = 0; i < imageData.data.length; i += 4) {
       const isPerson = segmentation.data[i / 4];
       if (!isPerson) {
-        imageData.data[i + 3] = 0;
+        imageData.data[i + 3] = 0; // Set alpha to 0 for non-person pixels
       }
     }
 
@@ -63,7 +64,7 @@ export const removeBackground = async (imageURL) => {
   }
 };
 
-export const extractDominantColor = (imageURL, setItem) => {
+export const extractDominantColor = async (imageURL, setItem) => {
   return new Promise((resolve) => {
     const img = new Image();
     img.crossOrigin = "Anonymous";
