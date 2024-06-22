@@ -55,7 +55,7 @@ export function SearchBar() {
           value={inputValue}
           onChange={handleChange}
           onFocus={handleFocus}
-          className={`h-10 xl:h-11 2xl:h-12 text-sm xl:text-base px-4 transition-all duration-1000 hover:w-full hover:dark:bg-dark-foreground hover:bg-foreground outline-none rounded-sm ${
+          className={`h-10 xl:h-11 2xl:h-12 text-sm xl:text-base px-4 transition-all duration-300 hover:dark:bg-dark-foreground hover:bg-foreground outline-none rounded-sm ${
             isFocused || inputValue
               ? "w-full bg-foreground rounded-b-none border-b-2 border-component-border dark:border-dark-component-border dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw"
               : "w-fit bg-transparent text-primary-tw"
