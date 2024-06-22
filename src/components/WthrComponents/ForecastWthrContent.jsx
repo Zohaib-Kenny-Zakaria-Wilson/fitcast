@@ -3,7 +3,7 @@ import WthrStat from "./WthrStat.jsx";
 
 export default function ForecastWthrContent({ loading, globalForecastData }) {
   return (
-    <div className="grid items-center grid-cols-2 gap-4 w-fit">
+    <div className="grid items-center gap-3 xl:grid-cols-2 w-fit">
       <WthrStat
         svg="sunrise"
         text={loading ? "Loading..." : globalForecastData?.astro.sunrise}

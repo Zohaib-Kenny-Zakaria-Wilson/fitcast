@@ -10,8 +10,8 @@ export default function WthrContent({
   globalForecastData,
 }) {
   return (
-    <div className="grid h-full border-b-4 rounded-md bg-foreground dark:bg-dark-foreground min-w-fit border-component-border dark:border-dark-component-border">
-      <div className="flex flex-col items-center justify-between w-full h-full px-6 py-16 2xl:px-12">
+    <div className="min-h-full border-b-4 rounded-md max-h-fit bg-foreground dark:bg-dark-foreground min-w-fit border-component-border dark:border-dark-component-border">
+      <div className="flex flex-col items-center justify-start w-full h-full gap-8 overflow-auto lg:p-8 xl:gap-12 2xl:gap-16 xl:p-10 2xl:p-12 scrollbar-hide">
         <CurrentWthrContent
           loading={loading}
           globalCurrentData={globalCurrentData}
