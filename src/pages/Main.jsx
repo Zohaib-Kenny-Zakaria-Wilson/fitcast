@@ -10,7 +10,7 @@ function Main() {
           src={require("../components/images/demo2.png")}
         ></img>
       </div>
-      <div className="flex flex-col items-center justify-center gap-10 p-12 mr-12 rounded-sm grow bg-dark-background">
+      <div className="flex flex-col items-center justify-center gap-10 p-16 rounded-sm grow bg-dark-background">
         <h1 className="text-5xl font-bold text-center text-dark-primary-tw">
           Get Started With Fitcast
         </h1>
