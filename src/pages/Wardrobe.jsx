@@ -57,7 +57,7 @@ export default function Wardrobe() {
                 <select
                   value={filter}
                   onChange={handleFilterChange}
-                  className="h-full px-4 py-1 rounded-sm select-no-arrow w-fit bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
+                  className="select-no-arrow w-fit py-1 px-4 min-h-full dark:bg-dark-foreground dark:text-dark-primary-tw dark:border-dark-component-border border-component-border bg-foreground rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:dark:border-transparent hover:border-transparent transition-all duration-100"
                 >
                   <option className="w-fit" value="">
                     Filter
@@ -73,7 +73,7 @@ export default function Wardrobe() {
                 <select
                   value={sort}
                   onChange={handleSortChange}
-                  className="h-full px-4 py-1 rounded-sm select-no-arrow bg-foreground dark:bg-dark-foreground dark:text-dark-primary-tw text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100"
+                  className="select-no-arrow w-fit py-1 px-4 min-h-full dark:bg-dark-foreground dark:text-dark-primary-tw dark:border-dark-component-border border-component-border bg-foreground rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:dark:border-transparent hover:border-transparent transition-all duration-100"
                 >
                   <option value="">Sort</option>
                   <option value="nameAsc">Name (A-Z)</option>
@@ -87,7 +87,7 @@ export default function Wardrobe() {
               <AddItem />
               {/* Today's Outfit Button */}
               <Link className="h-full" to="/daily">
-                <button className="px-4 py-1 rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
+                <button className="py-1 px-4 min-h-full rounded-sm text-primary-tw dark:text-dark-background bg-foreground border-component-border dark:bg-dark-primary-tw border-b-2 dark:border-foreground hover:dark:border-transparent hover:translate-y-0.5 hover:border-b-2 hover:border-transparent transition-all duration-100">
                   Today's Outfit
                 </button>
               </Link>
