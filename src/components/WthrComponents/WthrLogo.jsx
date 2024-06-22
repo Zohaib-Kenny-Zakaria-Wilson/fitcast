@@ -9,7 +9,7 @@ export function WthrLogo({ onClick }) {
         viewBox="0 0 398 97"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-24"
+        className="w-16 xl:w-20 2xl:w-24 h-fit"
       >
         <path
           className="fill-primary-tw dark:fill-dark-primary-tw"
