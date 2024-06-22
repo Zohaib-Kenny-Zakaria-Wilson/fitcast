@@ -1,23 +1,31 @@
 import { Link } from "react-router-dom";
-import { WthrLogo } from "../components/WthrComponents/WthrLogo";
 function Main() {
   return (
-    <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-background md:flex-row lg:flex-row ">
-      <div className="flex flex-col justify-center pl-12">
+    <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
+      <div className="flex flex-col justify-center w-full p-36">
         <img
+          className="rounded-md shadow-2xl"
           alt="pci"
-          width="90%"
+          width="100%"
           src={require("../components/images/demo2.png")}
         ></img>
       </div>
-      <div className="flex flex-col items-center justify-center gap-10 p-12 grow bg-emerald-400 ">
-        <h1 className="text-5xl font-bold text-gray-950"> Get Started With </h1>
-        <WthrLogo />
-        <div className="flex flex-row justify-between gap-x-3 gap-y-2">
-          <Link to={"/daily"} className="btn btn-large">
+      <div className="flex flex-col items-center justify-center gap-10 p-12 mr-12 rounded-sm grow bg-dark-background">
+        <h1 className="text-5xl font-bold text-center text-dark-primary-tw">
+          Get Started With Fitcast
+        </h1>
+
+        <div className="flex flex-col justify-between gap-4">
+          <Link
+            to={"/daily"}
+            className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+          >
             Log in
           </Link>
-          <Link to={"/daily"} className="btn btn-large">
+          <Link
+            to={"/daily"}
+            className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
+          >
             Sign up
           </Link>
         </div>
