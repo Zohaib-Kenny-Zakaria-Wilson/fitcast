@@ -12,7 +12,7 @@ export default function NavBarDaily({ toggleWthrDisplay }) {
     <main className="flex items-center justify-end w-full gap-4 max-h-fit">
       <button
         onClick={toggleWthrDisplay}
-        className="transition-transform duration-150 ease-in w-fit my-1 ml-1 size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+        className="transition-transform duration-150 ease-in w-fit my-1 ml-1 size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
       >
         <LogoIcon />
       </button>
