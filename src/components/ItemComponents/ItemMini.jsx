@@ -4,7 +4,10 @@ const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/1170x2532";
 
 export default function ItemMini({ clothingItem }) {
   return (
-    <main className={`flex flex-col rounded-md shadow-md`}>
+    <main
+      className={`flex flex-col rounded-md shadow-md hover:translate-y-1 transition-all duration-75`}
+      style={{}}
+    >
       <div
         className="w-full h-52 rounded-t-md"
         style={{
