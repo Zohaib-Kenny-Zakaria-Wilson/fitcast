@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function Main() {
+function Main({ session }) {
   return (
     <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
       <div className="flex flex-col justify-center w-full p-36">
@@ -16,18 +16,31 @@ function Main() {
         </h1>
 
         <div className="flex flex-col justify-between gap-4">
-          <Link
-            to={"/daily"}
-            className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
-          >
-            Log in
-          </Link>
-          <Link
-            to={"/daily"}
-            className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
-          >
-            Sign up
-          </Link>
+          {session ? (
+            <>
+              <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+              >
+                Log in
+              </Link>
+              <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
+              >
+                Sign up
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+              >
+                Get Started
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </main>
