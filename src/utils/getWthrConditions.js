@@ -1,4 +1,4 @@
-import { wthrConditions } from "../components/models/wthrConditions";
+import { wthrConditions } from "../models/wthrConditions";
 
 export default function getWthrConditions(data) {
   //Thresholds
