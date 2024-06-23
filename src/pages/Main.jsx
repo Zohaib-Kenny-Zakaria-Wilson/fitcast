@@ -1,5 +1,19 @@
 import { Link } from "react-router-dom";
+import useAppContext from "../context/useAppContext";
+import { Auth } from "@supabase/auth-ui-react";
+import { createClient } from "@supabase/supabase-js";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+
 function Main() {
+  const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
+
+  const supabase = createClient(
+    SUPABASE_URL,
+    process.env.REACT_APP_SUPABASE_KEY
+  );
+
+  const { session } = useAppContext();
+  console.log(session);
   return (
     <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
       <div className="flex flex-col justify-center w-full p-36">
@@ -16,18 +30,35 @@ function Main() {
         </h1>
 
         <div className="flex flex-col justify-between gap-4">
-          <Link
-            to={"/daily"}
-            className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
-          >
-            Log in
-          </Link>
-          <Link
-            to={"/daily"}
-            className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
-          >
-            Sign up
-          </Link>
+          {session ? (
+            <>
+              <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+              >
+                Get Started
+              </Link>
+            </>
+          ) : (
+            <>
+              <Auth
+                supabaseClient={supabase}
+                appearance={{ theme: ThemeSupa }}
+              />
+              {/* <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+              >
+                Log in
+              </Link>
+              <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
+              >
+                Sign up
+              </Link> */}
+            </>
+          )}
         </div>
       </div>
     </main>

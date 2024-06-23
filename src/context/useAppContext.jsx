@@ -26,6 +26,7 @@ export function AppProvider(props) {
   const [wthrConditions, setWthrConditions] = useState();
   const [clothingItems, setClothingItems] = useState([]);
   const [globalOutfits, setGlobalOutfits] = useState([]);
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
     async function loadClothingItems() {
@@ -57,6 +58,8 @@ export function AppProvider(props) {
   return (
     <AppContext.Provider
       value={{
+        session,
+        setSession,
         clothingItems,
         setClothingItems,
         wthrConditions,
