@@ -3,7 +3,7 @@ import { getWeatherIcon } from "../../utils/getWeatherIcon.js";
 
 export default function CurrentWthrContent({ loading, globalCurrentData }) {
   return (
-    <div className="flex flex-col items-center w-full gap-3 lg:gap-4 xl:gap-5 2xl:gap-6">
+    <div className="flex flex-col items-center w-full gap-3 md:w-fit lg:gap-4 xl:gap-5 2xl:gap-6">
       {/* Location */}
       <p className="text-xl font-medium text-center lg:text-2xl xl:text-3xl 2xl:text-4xl text-primary-tw dark:text-dark-primary-tw">
         {loading ? "Loading..." : globalCurrentData?.location.name}
