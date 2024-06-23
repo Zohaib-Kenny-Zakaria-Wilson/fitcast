@@ -9,7 +9,7 @@ export default function NavBarDaily({ toggleWthrDisplay }) {
   const [, toggleDarkMode] = useDarkMode();
 
   return (
-    <main className="flex items-center justify-end w-full gap-4 max-h-fit">
+    <main className="flex items-center justify-end w-full gap-4 lg:gap-8 max-h-fit ">
       <button
         onClick={toggleWthrDisplay}
         className="transition-transform duration-150 ease-in w-fit my-1 ml-1 size-8 md:size-9 lg:size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
