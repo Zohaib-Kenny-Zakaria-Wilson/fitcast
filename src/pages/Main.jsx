@@ -44,6 +44,7 @@ function Main() {
               <Auth
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
+                providers={["google"]}
               />
               {/* <Link
                 to={"/daily"}
