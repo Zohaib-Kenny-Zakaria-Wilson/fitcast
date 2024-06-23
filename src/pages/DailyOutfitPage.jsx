@@ -18,7 +18,7 @@ export default function DailyOutfitPage() {
         </div>
       )}
       <div className="flex flex-1 w-full gap-3 lg:flex-col">
-        <div className="box-border fixed top-0 w-full px-6 py-4 sm:py-6 sm:px-12 z-1 lg:p-0 lg:static lg:pb-4">
+        <div className="box-border fixed top-0 z-10 w-full px-6 py-4 bg-background sm:py-6 sm:px-12 z-1 lg:p-0 lg:static lg:pb-4">
           <NavBarDaily toggleWthrDisplay={toggleWthrDisplay} />
         </div>
         <div className="w-full mx-6 mt-20 overflow-auto lg:m-0 sm:mt-24 sm:mx-12">
