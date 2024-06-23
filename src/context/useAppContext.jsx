@@ -1,5 +1,6 @@
 import { openDB } from "idb";
 import { useContext, createContext, useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
 
 const DATABASE_NAME = "app-database";
 const OBJECT_STORE_NAME = "clothingItems";
@@ -27,6 +28,27 @@ export function AppProvider(props) {
   const [clothingItems, setClothingItems] = useState([]);
   const [globalOutfits, setGlobalOutfits] = useState([]);
   const [session, setSession] = useState(null);
+
+  const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
+
+  const supabase = createClient(
+    SUPABASE_URL,
+    process.env.REACT_APP_SUPABASE_KEY
+  );
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [setSession]);
 
   useEffect(() => {
     async function loadClothingItems() {
