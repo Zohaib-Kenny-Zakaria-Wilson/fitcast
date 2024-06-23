@@ -8,7 +8,7 @@ export default function LogoIcon() {
       viewBox="0 0 197 197"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="rounded-sm size-10 xl:size-11 2xl:size-12 "
+      className="rounded-sm size-8 md:size-9 lg:size-10 xl:size-11 2xl:size-12 "
     >
       <path
         className="fill-foreground dark:fill-dark-foreground"
