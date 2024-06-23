@@ -10,12 +10,12 @@ import { Auth } from "@supabase/auth-ui-react";
 import Settings from "./pages/Settings";
 import useAppContext from "./context/useAppContext";
 const supabase = createClient(
-  "https://<project>.supabase.co",
+  "https://batugplthlrnlthcjmqg.supabase.co",
   "<your-anon-key>"
 );
 
 function App() {
-  const { setSession } = useAppContext();
+  const { session, setSession } = useAppContext();
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -34,7 +34,7 @@ function App() {
     <Router>
       <Routes>
         {/* Main */}
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main session={session} />} />
         {/* DailyOutfit Route */}
         <Route path="/daily" element={<DailyOutfitPage />} />
         {/* Wardrobe Route */}
