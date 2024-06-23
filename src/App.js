@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Wardrobe from "./pages/Wardrobe";
 import DailyOutfitPage from "./pages/DailyOutfitPage";
 import Main from "./pages/Main";
@@ -39,6 +44,8 @@ function App() {
         <Route path="/wardrobe" element={<Wardrobe />} />
         {/* Settings Route */}
         <Route path="/settings" element={<Settings />} />
+        {/* Catch All Route*/}
+        <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
       </Routes>
     </Router>
   );
