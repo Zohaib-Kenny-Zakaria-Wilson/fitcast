@@ -20,9 +20,9 @@ export default function SearchItem({ clothingItem }) {
     setIsModalOpen(true);
   };
 
-    /**
+  /**
    * Closes the modal
-   * 
+   *
    * @returns {void}
    */
   const closeModal = () => {
@@ -32,7 +32,7 @@ export default function SearchItem({ clothingItem }) {
   /**
    * Edits the item in the wardrobe and updates the context
    * @param {clothingItem} newClothingItem The new clothing item to replace the old one
-   * 
+   *
    * @returns {void}
    */
   const editItem = (updatedItem) => {
@@ -45,11 +45,13 @@ export default function SearchItem({ clothingItem }) {
     // Close the modal
     closeModal();
   };
-  
+
   return (
     <>
       <button type="button" className="w-full" onClick={openModal}>
-        <div className="flex justify-start w-full p-4 bg-foreground text-primary-tw dark:text-dark-primary-tw dark:bg-dark-foreground">{clothingItem.name}</div>
+        <div className="flex justify-start w-full p-3 text-xs lg:text-base lg:p-4 bg-foreground text-primary-tw dark:text-dark-primary-tw dark:bg-dark-foreground">
+          {clothingItem.name}
+        </div>
       </button>
       {isModalOpen && (
         <dialog open className="modal">
@@ -58,7 +60,11 @@ export default function SearchItem({ clothingItem }) {
             onSubmit={editItem}
             buttonText="Save Changes"
           />
-          <button type="button" onClick={closeModal} className="modal-backdrop backdrop-blur-sm">
+          <button
+            type="button"
+            onClick={closeModal}
+            className="modal-backdrop backdrop-blur-sm"
+          >
             Close
           </button>
         </dialog>
