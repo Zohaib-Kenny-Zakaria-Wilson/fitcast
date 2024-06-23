@@ -23,7 +23,7 @@ export default function NavBarDaily({ toggleWthrDisplay }) {
       {/* Profile */}
       <Link
         to="/settings"
-        className="rounded-sm duration-150 ease-in lg:size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px] my-1 mr-1"
+        className="rounded-sm duration-150 ease-in size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px] my-1 mr-1"
         style={{
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "/assets/base-profile.jpeg"
