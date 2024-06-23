@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import useAppContext from "../context/useAppContext";
+import { Auth } from "@supabase/auth-ui-react";
+
 function Main() {
   const { session } = useAppContext();
-
+  console.log(session);
   return (
     <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
       <div className="flex flex-col justify-center w-full p-36">
@@ -25,6 +27,15 @@ function Main() {
                 to={"/daily"}
                 className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
               >
+                Get Started
+              </Link>
+            </>
+          ) : (
+            <>
+              {/* <Link
+                to={"/daily"}
+                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
+              >
                 Log in
               </Link>
               <Link
@@ -32,16 +43,7 @@ function Main() {
                 className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
               >
                 Sign up
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link
-                to={"/daily"}
-                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
-              >
-                Get Started
-              </Link>
+              </Link> */}
             </>
           )}
         </div>
