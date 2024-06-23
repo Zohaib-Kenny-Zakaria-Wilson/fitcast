@@ -7,11 +7,11 @@ export function DarkModeButton() {
   return (
     <button
       onClick={toggleDarkMode}
-      className="flex items-center justify-center rounded-full lg:size-10 xl:size-11 2xl:size-12"
+      className="flex items-center justify-center rounded-full size-8 md:size-9 lg:size-10 xl:size-11 2xl:size-12"
     >
       {isDarkMode ? (
         <svg
-          className="size-7 2xl:size-8 text-primary-tw dark:text-dark-primary-tw duration-150 ease-in hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+          className="size-6 lg:size-7 2xl:size-8 text-primary-tw dark:text-dark-primary-tw duration-150 ease-in hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -22,7 +22,7 @@ export function DarkModeButton() {
         </svg>
       ) : (
         <svg
-          className="size-7 2xl:size-8 text-primary-tw dark:text-dark-primary-tw duration-150 ease-in hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+          className="size-6 lg:size-7 2xl:size-8 text-primary-tw dark:text-dark-primary-tw duration-150 ease-in hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
