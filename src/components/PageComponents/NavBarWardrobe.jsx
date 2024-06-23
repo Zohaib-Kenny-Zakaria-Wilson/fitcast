@@ -10,10 +10,10 @@ export default function NavBarWardrobe() {
   const [, toggleDarkMode] = useDarkMode();
 
   return (
-    <main className="flex items-center justify-end w-full gap-8 max-h-fit">
+    <main className="flex items-center justify-end w-full gap-4 lg:gap-8 max-h-fit">
       <Link
         to="/daily"
-        className="transition-transform my-1 ml-1 duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
+        className="transition-transform duration-150 ease-in w-fit my-1 ml-1 size-8 md:size-9 lg:size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px]"
       >
         <LogoIcon />
       </Link>
@@ -24,7 +24,7 @@ export default function NavBarWardrobe() {
       {/* Profile */}
       <Link
         to="/settings"
-        className="transition-transform my-1 mr-1 box-border duration-150 ease-in size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px] rounded-sm"
+        className="rounded-sm duration-150 ease-in size-8 md:size-9 lg:size-10 xl:size-11 2xl:size-12 hover:translate-y-[2px] hover:scale-105 dark:hover:scale-110 dark:hover:translate-y-[2px] my-1 mr-1"
         style={{
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "/assets/base-profile.jpeg"
