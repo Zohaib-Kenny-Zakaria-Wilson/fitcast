@@ -12,7 +12,7 @@ export default function ItemTag({
   return (
     <div
       onClick={onClick}
-      className={`flex justify-center gap-2 px-2 py-2 transition-all transform duration-150 border-2 rounded-sm cursor-pointer w-fit hover:scale-105 hover:shadow-md`}
+      className={`flex justify-center gap-2 py-1 px-2 md:py-2 transition-all transform duration-150 border-2 rounded-sm cursor-pointer w-fit hover:scale-105 hover:shadow-md`}
       style={{
         backgroundColor: color,
         color: textColor,
