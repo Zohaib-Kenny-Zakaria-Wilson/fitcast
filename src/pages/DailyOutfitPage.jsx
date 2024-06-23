@@ -11,7 +11,7 @@ export default function DailyOutfitPage() {
   };
 
   return (
-    <div className="flex flex-col h-screen lg:p-10 lg:gap-6 xl:p-11 xl:gap-7 2xl:gap-8 2xl:p-12 lg:flex-row bg-background">
+    <div className="flex flex-col h-screen lg:p-10 lg:gap-6 xl:p-11 xl:gap-7 2xl:gap-8 2xl:p-12 lg:flex-row bg-background dark:bg-dark-background">
       {isWthrVisible && (
         <div className="mx-4 mt-20 -mb-12 sm:mt-24 sm:-mb-8 sm:mx-12 2xl:m-0 lg:m-0 lg:static lg:w-fit lg:h-full lg:bg-transparent">
           <WthrContainer />
