@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-function Main({ session }) {
+import useAppContext from "../context/useAppContext";
+function Main() {
+  const { session } = useAppContext();
+
   return (
     <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
       <div className="flex flex-col justify-center w-full p-36">
