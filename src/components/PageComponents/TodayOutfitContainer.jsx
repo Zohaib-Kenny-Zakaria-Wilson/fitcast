@@ -31,11 +31,11 @@ export default function TodayOutfitContainer() {
 
   return (
     <main className="flex flex-col w-full h-full pb-12 overflow-y-auto gap-7 xl:gap-8 2xl:gap-9 scrollbar-hide">
-      <div className="flex flex-col items-center justify-between w-full gap-4 sm:flex-row h-fit">
-        <p className="text-xl font-medium xl:text-2xl text-primary-tw dark:text-dark-primary-tw">
+      <div className="flex flex-col items-center justify-between w-full gap-12 md:gap-4 sm:flex-row h-fit">
+        <p className="order-2 text-xl font-medium xl:text-2xl text-primary-tw sm:order-1 dark:text-dark-primary-tw">
           Today's Outfits
         </p>
-        <div className="flex justify-center w-full gap-8 sm:w-fit sm:gap-4">
+        <div className="flex justify-between w-full sm:gap-4 sm:order-2 sm:w-fit">
           <button
             onClick={regenerateOutfits}
             className="py-1 px-4 min-h-full text-sm md:text-base dark:bg-dark-foreground dark:text-dark-primary-tw dark:border-dark-component-border bg-component-border rounded-sm text-primary-tw border-b-2 hover:translate-y-0.5 hover:border-b-2 hover:dark:border-transparent hover:border-transparent transition-all duration-100"
