@@ -30,7 +30,7 @@ export default function TodayOutfitContainer() {
   };
 
   return (
-    <main className="flex flex-col w-full h-full overflow-y-auto gap-7 xl:gap-8 2xl:gap-9 scrollbar-hide">
+    <main className="flex flex-col w-full h-full pb-12 overflow-y-auto gap-7 xl:gap-8 2xl:gap-9 scrollbar-hide">
       <div className="flex flex-col items-center justify-between w-full gap-4 sm:flex-row h-fit">
         <p className="text-xl font-medium xl:text-2xl text-primary-tw dark:text-dark-primary-tw">
           Today's Outfits
