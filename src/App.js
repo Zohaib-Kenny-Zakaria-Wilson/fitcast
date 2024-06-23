@@ -9,10 +9,9 @@ import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import Settings from "./pages/Settings";
 import useAppContext from "./context/useAppContext";
-const supabase = createClient(
-  "https://batugplthlrnlthcjmqg.supabase.co",
-  "<your-anon-key>"
-);
+
+const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
+const supabase = createClient(SUPABASE_URL, process.env.REACT_APP_SUPABASE_KEY);
 
 function App() {
   const { session, setSession } = useAppContext();
