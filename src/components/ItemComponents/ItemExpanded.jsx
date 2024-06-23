@@ -71,7 +71,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
 
   return (
     <main
-      className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw dark:bg-dark-foreground`}
+      className={`modal-box lg:min-w-fit min-h-fit p-6 md:p-12 flex flex-col lg:flex-row gap-4 lg:gap-12 text-primary-tw max-w-[80vw] lg:max-w-[75vw] xl:max-w-[65vw] 2xl:max-w-[60vw] bg-primary-tw dark:bg-dark-foreground scrollbar-hide`}
       style={{ backgroundColor: backgroundColor }}
     >
       <div
@@ -90,19 +90,19 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
         </label>
       </div>
       <form
-        className="flex flex-col justify-between w-full min-h-full gap-6 px-6 py-6 rounded-md lg:w-1/2 bg-foreground dark:bg-dark-foreground"
+        className="flex flex-col justify-between w-full gap-6 px-6 py-6 rounded-md min-h-fit lg:gap-6 lg:w-1/2 bg-foreground dark:bg-dark-foreground"
         onSubmit={handleSubmit}
       >
-        <div className="w-full">
+        <div className="w-full -mb-2 lg:m-0">
           <input
             value={item.name}
             placeholder="Enter item name"
             onChange={handleTextChange}
-            className="w-full text-3xl font-medium xl:text-2xl 2xl:text-4xl bg-foreground dark:bg-dark-foreground focus:outline-none dark:text-dark-primary-tw text-primary-tw"
+            className="w-full text-xl font-medium md:text-3xl 2xl:text-4xl bg-foreground dark:bg-dark-foreground focus:outline-none dark:text-dark-primary-tw text-primary-tw"
             style={{ color: item.textColor }}
           />
           <select
-            className="flex w-1/2 p-0 text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
+            className="flex w-1/2 p-0 text-lg max-h-fit md:text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
             value={item.category}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
@@ -119,7 +119,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
         <ItemTagContainer tagsState={item} toggleTag={toggleTag} />
         <button
           type="submit"
-          className="w-full py-3 transition-all duration-150 border-b-2 rounded-sm bg-primary-tw dark:bg-dark-primary-tw border-dark-primary-tw dark:border-foreground hover:dark:border-transparent hover:border-transparent hover:translate-y-0.5 text-background dark:text-dark-background"
+          className="w-full py-2 text-sm md:text-base md:py-3 transition-all duration-150 border-b-2 rounded-sm bg-primary-tw dark:bg-dark-primary-tw border-dark-primary-tw dark:border-foreground hover:dark:border-transparent hover:border-transparent hover:translate-y-0.5 text-background dark:text-dark-background"
         >
           <p>{buttonText}</p>
         </button>
