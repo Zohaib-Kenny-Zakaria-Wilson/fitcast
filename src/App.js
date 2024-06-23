@@ -14,7 +14,7 @@ const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
 const supabase = createClient(SUPABASE_URL, process.env.REACT_APP_SUPABASE_KEY);
 
 function App() {
-  const { session, setSession } = useAppContext();
+  const { setSession } = useAppContext();
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -33,7 +33,7 @@ function App() {
     <Router>
       <Routes>
         {/* Main */}
-        <Route path="/" element={<Main session={session} />} />
+        <Route path="/" element={<Main />} />
         {/* DailyOutfit Route */}
         <Route path="/daily" element={<DailyOutfitPage />} />
         {/* Wardrobe Route */}
