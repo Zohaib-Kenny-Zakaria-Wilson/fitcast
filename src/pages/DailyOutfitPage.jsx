@@ -11,13 +11,20 @@ export default function DailyOutfitPage() {
   };
 
   return (
-    <main className="flex w-screen h-screen px-10 py-8 xl:px-12 xl:py-10 gap-14 2xl:px-14 bg-background dark:bg-dark-background">
-      {isWthrVisible && <WthrContainer />}
-      {/* Right Side */}
-      <div className="flex flex-col w-full h-full ml-auto overflow-y-auto rounded-lg gap-9 bg-background dark:bg-dark-background scrollbar-hide">
-        <NavBarDaily toggleWthrDisplay={toggleWthrDisplay} />
-        <TodayOutfitContainer />
+    <div className="flex flex-col h-screen lg:p-10 lg:gap-6 xl:p-11 xl:gap-7 2xl:gap-8 2xl:p-12 lg:flex-row bg-background">
+      {isWthrVisible && (
+        <div className="mx-4 mt-20 -mb-12 sm:mt-24 sm:-mb-8 sm:mx-12 2xl:m-0 lg:m-0 lg:static lg:w-fit lg:h-full lg:bg-transparent">
+          <WthrContainer />
+        </div>
+      )}
+      <div className="flex flex-1 w-full gap-3 overflow-auto scrollbar-hide lg:flex-col">
+        <div className="box-border fixed top-0 w-full px-4 py-4 sm:py-6 sm:px-12 z-1 lg:p-0 lg:static lg:pb-4">
+          <NavBarDaily toggleWthrDisplay={toggleWthrDisplay} />
+        </div>
+        <div className="w-full mx-4 mt-20 lg:m-0 sm:mt-24 sm:mx-12">
+          <TodayOutfitContainer />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
