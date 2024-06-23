@@ -4,9 +4,8 @@ import Wardrobe from "./pages/Wardrobe";
 import DailyOutfitPage from "./pages/DailyOutfitPage";
 import Main from "./pages/Main";
 import "./index.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { Auth } from "@supabase/auth-ui-react";
 import Settings from "./pages/Settings";
 import useAppContext from "./context/useAppContext";
 
