@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import useAppContext from "../context/useAppContext";
 import { Auth } from "@supabase/auth-ui-react";
-import { createClient } from "@supabase/supabase-js";
+
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "../supabase/supabaseClient";
 function Main() {
