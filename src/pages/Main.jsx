@@ -38,6 +38,7 @@ function Main() {
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
                 providers={["google"]}
+                theme="dark"
               />
             </>
           )}
