@@ -38,18 +38,6 @@ function Main() {
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
               />
-              {/* <Link
-                to={"/daily"}
-                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
-              >
-                Log in
-              </Link>
-              <Link
-                to={"/daily"}
-                className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
-              >
-                Sign up
-              </Link> */}
             </>
           )}
         </div>
