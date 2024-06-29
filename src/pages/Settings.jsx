@@ -5,7 +5,12 @@ import { supabase } from "../supabase/supabaseClient";
 function Settings() {
   const signOut = async () => {
     console.log("signing out");
-    const { error } = await supabase.auth.signOut();
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -15,17 +20,17 @@ function Settings() {
           Settings
         </div>
         <div className="flex justify-between flex-row-inverse">
-          {/* <Link to="/"> */}
-          <button
-            onClick={() => {
-              console.log("signing out");
-              signOut();
-            }}
-            className="px-4 py-2 rounded dark:text-dark-primary-tw text-primary-tw dark:bg-dark-component-border bg-component-border hover:bg-blue-700"
-          >
-            sign out
-          </button>
-          {/* </Link> */}
+          <Link to="/">
+            <button
+              onClick={() => {
+                signOut();
+              }}
+              className="px-4 py-2 rounded dark:text-dark-primary-tw text-primary-tw dark:bg-dark-component-border bg-component-border hover:bg-blue-700"
+            >
+              sign out
+            </button>
+          </Link>
+
           <Link to="/daily">
             <button className="px-4 py-2 rounded dark:text-dark-primary-tw text-primary-tw dark:bg-dark-component-border bg-component-border hover:bg-blue-700">
               save
