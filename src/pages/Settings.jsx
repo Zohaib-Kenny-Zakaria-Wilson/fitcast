@@ -19,6 +19,7 @@ function Settings() {
           <button
             onClick={() => {
               console.log("signing out");
+              signOut();
             }}
             className="px-4 py-2 rounded dark:text-dark-primary-tw text-primary-tw dark:bg-dark-component-border bg-component-border hover:bg-blue-700"
           >
