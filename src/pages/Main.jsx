@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import useAppContext from "../context/useAppContext";
 import { Auth } from "@supabase/auth-ui-react";
-import { createClient } from "@supabase/supabase-js";
+
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-
+import { supabase } from "../supabase/supabaseClient";
 function Main() {
-  const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
-
-  const supabase = createClient(
-    SUPABASE_URL,
-    process.env.REACT_APP_SUPABASE_KEY
-  );
-
   const { session } = useAppContext();
   console.log(session);
   return (
@@ -44,19 +37,9 @@ function Main() {
               <Auth
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
+                providers={["google"]}
+                theme="dark"
               />
-              {/* <Link
-                to={"/daily"}
-                className="px-24 py-3 rounded-sm bg-dark-primary-tw text-primary-tw"
-              >
-                Log in
-              </Link>
-              <Link
-                to={"/daily"}
-                className="px-24 py-3 rounded-sm bg-dark-component-border text-dark-primary-tw"
-              >
-                Sign up
-              </Link> */}
             </>
           )}
         </div>

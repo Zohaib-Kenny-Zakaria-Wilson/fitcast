@@ -10,12 +10,10 @@ import DailyOutfitPage from "./pages/DailyOutfitPage";
 import Main from "./pages/Main";
 import "./index.css";
 import { useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
 import Settings from "./pages/Settings";
 import useAppContext from "./context/useAppContext";
 
-const SUPABASE_URL = "https://batugplthlrnlthcjmqg.supabase.co";
-const supabase = createClient(SUPABASE_URL, process.env.REACT_APP_SUPABASE_KEY);
+import { supabase } from "./supabase/supabaseClient";
 
 function App() {
   const { setSession } = useAppContext();
