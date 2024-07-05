@@ -6,7 +6,7 @@ import {
   removeBackground,
   extractDominantColor,
 } from "../../utils/imageFunctions";
-
+import { supabase } from "../../supabase/supabaseClient";
 // Placeholder image for the image when no image is found
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 
@@ -14,7 +14,6 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
   const [item, setItem] = useState(clothingItem);
   const [isDarkMode] = useDarkMode();
   const [loading, setLoading] = useState(false);
-
   const handleTextChange = (e) => {
     setItem({
       ...item,
@@ -39,12 +38,21 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      const fileName = file.name.replace(/\s/g, "");
       const reader = new FileReader();
       reader.onload = async (upload) => {
         const imageURL = upload.target.result;
+        await supabase.storage
+          .from("clothingitemimages")
+          .upload(fileName, file, {
+            cacheControl: "5000",
+            upsert: false,
+          });
         setItem((prevItem) => ({
           ...prevItem,
-          imageURL: imageURL,
+          image_url:
+            "https://batugplthlrnlthcjmqg.supabase.co/storage/v1/object/public/clothingitemimages/" +
+            fileName,
         }));
         setLoading(true);
         const compressedImageURL = await compressImage(imageURL);
@@ -77,7 +85,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
       <div
         className="relative w-full lg:w-1/2 min-h-[200px] lg:min-h-full rounded-md overflow-hidden"
         style={{
-          backgroundImage: `url(${item.imageURL || PLACEHOLDER_IMAGE_URL})`,
+          backgroundImage: `url(${item.image_url || PLACEHOLDER_IMAGE_URL})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

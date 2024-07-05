@@ -12,7 +12,7 @@ export default function ItemMini({ clothingItem }) {
         className="w-full h-52 rounded-t-md"
         style={{
           backgroundImage: `url(${
-            clothingItem.imageURL || PLACEHOLDER_IMAGE_URL
+            clothingItem.image_url || PLACEHOLDER_IMAGE_URL
           })`,
           backgroundSize: "cover",
           backgroundPosition: "center",

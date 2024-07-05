@@ -10,7 +10,7 @@ export default function ClothingItem({ clothingItem }) {
   // State to toggle the modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Used to update the clothing items in the context
-  const { setClothingItems, updateClothingItemsInOutfits } = useAppContext();
+  const { editItem, updateClothingItemsInOutfits } = useAppContext();
 
   /**
    * Opens the modal
@@ -36,14 +36,10 @@ export default function ClothingItem({ clothingItem }) {
    *
    * @returns {void}
    */
-  const editItem = (updatedItem) => {
+  const handleEditItem = (updatedItem) => {
     // Update the clothing items in the context by mapping over the items and replacing the one that was edited
-    setClothingItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === clothingItem.id ? updatedItem : item
-      )
-    );
 
+    editItem(updatedItem);
     // Update the clothing items in the outfits
     updateClothingItemsInOutfits(updatedItem);
     // Close the modal
@@ -58,7 +54,7 @@ export default function ClothingItem({ clothingItem }) {
         <dialog open className="modal">
           <ItemExpanded
             clothingItem={clothingItem}
-            onSubmit={editItem}
+            onSubmit={handleEditItem}
             buttonText="Save Changes"
           />
           <button

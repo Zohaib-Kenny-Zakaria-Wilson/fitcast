@@ -1,19 +1,11 @@
-import { openDB } from "idb";
-import { useContext, createContext, useState, useEffect } from "react";
-
-const DATABASE_NAME = "app-database";
-const OBJECT_STORE_NAME = "clothingItems";
-
-async function getDb() {
-  return openDB(DATABASE_NAME, 1, {
-    upgrade(db) {
-      db.createObjectStore(OBJECT_STORE_NAME, {
-        keyPath: "id",
-        autoIncrement: true,
-      });
-    },
-  });
-}
+import {
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
+import { supabase } from "../supabase/supabaseClient";
 
 export const AppContext = createContext(null);
 export default function useAppContext() {
@@ -28,24 +20,76 @@ export function AppProvider(props) {
   const [globalOutfits, setGlobalOutfits] = useState([]);
   const [session, setSession] = useState(null);
 
+  // Load clothingItems on start
   useEffect(() => {
-    async function loadClothingItems() {
-      const db = await getDb();
-      const items = await db.getAll(OBJECT_STORE_NAME);
-      setClothingItems(items);
-    }
-    loadClothingItems();
-  }, []);
+    // Get all data from the clothing items table where the user_id is the current user
+    const loadClothingItems = async () => {
+      if (session) {
+        let { data: ClothingItems, error } = await supabase
+          .from("ClothingItems")
+          .select("*")
+          .eq("user_id", session.user.id);
 
-  useEffect(() => {
-    async function saveClothingItems() {
-      const db = await getDb();
-      for (const item of clothingItems) {
-        await db.put(OBJECT_STORE_NAME, item);
+        if (error) {
+          console.error(error);
+        } else if (ClothingItems) {
+        }
+        setClothingItems(ClothingItems || []);
       }
-    }
-    saveClothingItems();
-  }, [clothingItems]);
+    };
+    loadClothingItems();
+  }, [session]);
+
+  const addItem = useCallback(
+    async (clothingItem) => {
+      if (session) {
+        const { data, error } = await supabase
+          .from("ClothingItems")
+          .insert([
+            {
+              user_id: session.user.id,
+              name: clothingItem.name,
+              image_url: clothingItem.image_url,
+            },
+          ])
+          .select();
+        if (error) {
+          console.log(error);
+        }
+        if (data) {
+          setClothingItems((prev) => [...prev, clothingItem]);
+        }
+      }
+    },
+    [session]
+  );
+
+  const editItem = useCallback(
+    async (updatedClothingItem) => {
+      if (session) {
+        const { data, error } = await supabase
+          .from("ClothingItems")
+          .update({
+            name: updatedClothingItem.name,
+            image_url: updatedClothingItem.image_url,
+            type: updatedClothingItem.type,
+          })
+          .eq("id", updatedClothingItem.id)
+          .select();
+        if (error) {
+          console.log(error);
+        }
+        if (data) {
+          setClothingItems((prevItems) =>
+            prevItems.map((item) =>
+              item.id === updatedClothingItem.id ? updatedClothingItem : item
+            )
+          );
+        }
+      }
+    },
+    [session]
+  );
 
   const updateClothingItemsInOutfits = (updatedItem) => {
     setGlobalOutfits((prevOutfits) =>
@@ -58,6 +102,8 @@ export function AppProvider(props) {
   return (
     <AppContext.Provider
       value={{
+        editItem,
+        addItem,
         session,
         setSession,
         clothingItems,
