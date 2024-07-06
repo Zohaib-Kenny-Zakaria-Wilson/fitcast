@@ -16,7 +16,6 @@ export default function TodayOutfitContainer() {
         globalOutfits[0] === null)
     ) {
       const newOutfits = [generateOutfit(), generateOutfit(), generateOutfit()];
-      console.log("Generated outfits on mount:", newOutfits);
       setGlobalOutfits(newOutfits);
     }
   }, [wthrConditions, globalOutfits, setGlobalOutfits, generateOutfit]);
@@ -24,7 +23,6 @@ export default function TodayOutfitContainer() {
   const regenerateOutfits = () => {
     if (wthrConditions) {
       const newOutfits = [generateOutfit(), generateOutfit(), generateOutfit()];
-      console.log("Regenerated outfits:", newOutfits);
       setGlobalOutfits(newOutfits);
     }
   };
