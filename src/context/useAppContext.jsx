@@ -50,6 +50,7 @@ export function AppProvider(props) {
               user_id: session.user.id,
               name: clothingItem.name,
               image_url: clothingItem.image_url,
+              type: clothingItem.type,
             },
           ])
           .select();
@@ -66,6 +67,7 @@ export function AppProvider(props) {
 
   const editItem = useCallback(
     async (updatedClothingItem) => {
+      console.log(updatedClothingItem);
       if (session) {
         const { data, error } = await supabase
           .from("ClothingItems")

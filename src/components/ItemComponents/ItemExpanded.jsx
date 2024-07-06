@@ -24,7 +24,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
   const handleSelectChange = (e) => {
     setItem({
       ...item,
-      category: e.target.value,
+      type: e.target.value,
     });
   };
 
@@ -111,7 +111,7 @@ export default function ItemExpanded({ clothingItem, onSubmit, buttonText }) {
           />
           <select
             className="flex w-1/2 p-0 text-lg max-h-fit md:text-xl select bg-foreground dark:bg-dark-foreground focus:outline-none focus:border-transparent dark:text-dark-primary-tw text-secondary-tw"
-            value={item.category}
+            value={item.type}
             onChange={handleSelectChange}
             style={{ color: item.textColor }}
           >
