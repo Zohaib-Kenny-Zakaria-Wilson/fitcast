@@ -24,7 +24,7 @@ export default function Wardrobe() {
   // Filter clothing items
   const filteredClothingItems = clothingItems.filter((item) => {
     if (!filter) return true;
-    return item.category.toLowerCase() === filter.toLowerCase();
+    return item.type.toLowerCase() === filter.toLowerCase();
   });
 
   // Sort clothing items

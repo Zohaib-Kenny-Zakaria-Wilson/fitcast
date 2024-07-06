@@ -6,7 +6,6 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "../supabase/supabaseClient";
 function Main() {
   const { session } = useAppContext();
-  console.log(session);
   return (
     <main className="flex flex-col-reverse h-screen dark:bg-dark-background bg-foreground md:flex-row lg:flex-row ">
       <div className="flex flex-col justify-center w-full p-36">

@@ -18,16 +18,20 @@ function filterItemsByConditions(items, conditions) {
   }
 
   // Filter items by conditions
-  return items.filter(item => {
+  return items.filter((item) => {
     return (
       // Match hot or cold weather
-      ((conditions.hotWeather && item.hotWeather) || (conditions.coldWeather && item.coldWeather)) &&
+      ((conditions.hotWeather && item.hotWeather) ||
+        (conditions.coldWeather && item.coldWeather)) &&
       // Match high or low wind
-      ((conditions.highWind && item.highWind) || (conditions.lowWind && item.lowWind)) &&
+      ((conditions.highWind && item.highWind) ||
+        (conditions.lowWind && item.lowWind)) &&
       // Match high or low rain
-      ((conditions.highRain && item.highRain) || (conditions.lowRain && item.lowRain)) &&
+      ((conditions.highRain && item.highRain) ||
+        (conditions.lowRain && item.lowRain)) &&
       // Match high or low humidity
-      ((conditions.highHumidity && item.highHumidity) || (conditions.lowHumidity && item.lowHumidity))
+      ((conditions.highHumidity && item.highHumidity) ||
+        (conditions.lowHumidity && item.lowHumidity))
     );
   });
 }
@@ -43,12 +47,12 @@ function categorizeItems(items) {
     shirt: [],
     pants: [],
     accessories: [],
-    shoes: []
+    shoes: [],
   };
 
   // Categorize items
-  items.forEach(item => {
-    const normalizedCategory = item.category.toLowerCase(); // Normalize category name
+  items.forEach((item) => {
+    const normalizedCategory = item.type.toLowerCase(); // Normalize category name
     if (itemCategories[normalizedCategory]) {
       itemCategories[normalizedCategory].push(item);
     } else {
@@ -69,7 +73,7 @@ function generateRandomOutfit(categories) {
   const outfit = [];
 
   // Generate outfit (ChatGPT code snippet)
-  Object.keys(categories).forEach(category => {
+  Object.keys(categories).forEach((category) => {
     if (categories[category].length > 0) {
       outfit.push(getRandomItem(categories[category]));
     }
@@ -81,7 +85,7 @@ function generateRandomOutfit(categories) {
 
 /**
  * getFallbackOutfit - Generates a random outfit from all items
- * @param {clothingItem[]} items 
+ * @param {clothingItem[]} items
  * @returns the generated outfit
  */
 function getFallbackOutfit(items) {
@@ -101,14 +105,16 @@ export default function useOutfitGenerator() {
 
   // Return outfit generator function
   return useCallback(() => {
-
     // calls the getFallbackOutfit function if wthrConditions is undefined
     if (!wthrConditions) {
       return getFallbackOutfit(clothingItems);
     }
 
     // Filter, categorize, and generate outfit
-    const filteredItems = filterItemsByConditions(clothingItems, wthrConditions);
+    const filteredItems = filterItemsByConditions(
+      clothingItems,
+      wthrConditions
+    );
     const categorizedItems = categorizeItems(filteredItems);
     const outfit = generateRandomOutfit(categorizedItems);
 

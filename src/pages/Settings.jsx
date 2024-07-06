@@ -4,7 +4,6 @@ import { supabase } from "../supabase/supabaseClient";
 
 function Settings() {
   const signOut = async () => {
-    console.log("signing out");
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;

@@ -8,7 +8,7 @@ export default function AddItem() {
   // State to toggle the modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Used to update the clothing items in the context\
-  const { clothingItems, setClothingItems } = useAppContext();
+  const { setClothingItems, addItem } = useAppContext();
 
   /**
    * Opens the modal
@@ -28,16 +28,8 @@ export default function AddItem() {
     setIsModalOpen(false);
   };
 
-  const getNextId = () => {
-    const ids = clothingItems
-      .map((item) => parseInt(item.id, 10))
-      .filter((id) => !isNaN(id));
-    return ids.length ? Math.max(...ids) + 1 : 1;
-  };
-
-  const addItem = (newItem) => {
-    newItem.id = getNextId().toString(); // Ensure the ID is a string
-    setClothingItems((curr) => [newItem, ...curr]);
+  const handleSubmit = (newItem) => {
+    addItem(newItem);
     closeModal();
   };
 
@@ -68,7 +60,7 @@ export default function AddItem() {
                 false
               )
             }
-            onSubmit={addItem}
+            onSubmit={handleSubmit}
             buttonText={"Add Item"}
           />
           <button
